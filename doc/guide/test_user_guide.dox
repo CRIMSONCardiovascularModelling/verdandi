@@ -1,0 +1,60 @@
+/*!     \file test_user_guide.dox
+        \brief  Tests user's guide.
+*/
+
+
+/*!
+\page  test_user_guide Tests user's guide.
+
+
+
+\section install Installation
+
+<ul>
+     <li> Download and compile Google test, e.g., under Linux:</li>
+     \precode
+     wget https://googletest.googlecode.com/files/gtest-1.7.0.zip
+     unzip gtest-1.7.0.zip
+     mkdir gtest
+     cd gtest
+     cmake ../gtest-1.7.0/
+     make
+     \endprecode
+     <li> Put the Google test location in your $PATH under Linux and MacOS or your "path" under Windows.</li>
+     <li> Modify the SConstruct found in the test directory: model name (templated) and model path.</li>
+     <li> Build the project </li>
+     <li> Set the configuration.lua file to match your needs </li>
+     <li> run the test (./run) </li>
+</ul>
+
+
+
+\section gtest Google Test accepts some useful command-line options
+
+<ul>
+     <li> --gtest_print_time=0 to suppress the display of elapsed time </li>
+     <li> --gtest_shuffle to run the tests in a random order </li>
+     <li> --gtest_filter=PATTERN to run only the tests matching the pattern </li>
+     <li> --gtest_repeat=N to repeat the tests N times </li>
+     <li> --gtest_break_on_failure </li>
+</ul>
+
+\section tips Tips
+<ul>
+        <li>Those two last options are useful when used together in case of non-reproducible random bug. Set N to -1 (infinite repeat). Run into your favorite debugger: gtest will break on failure when the bug occurs, allowing you to find the exact state of your code at this time.</li>
+        <li>Disable any output from your model for a better readability.</li>
+</ul>
+
+
+\section list Tests list
+
+<ul>
+        <li>Model: with those tests one can make sure that the basic functions of a model are implemented accurately.</li>
+        <li>Methods: those tests ensure that all methods are consistent.</li>
+        <li>Performance: those tests will allow to check the performance of the methods, in order to verify that a method is as efficient as it should.</li>
+        <li>Tools: those tests check that the perturbation managers are correct (chi2, diversity, ...).</li>
+</ul>
+
+
+
+*/

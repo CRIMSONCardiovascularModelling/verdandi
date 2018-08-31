@@ -1,0 +1,60 @@
+import os, glob
+
+
+######################################################
+## One should modify this part to match one's needs ##
+######################################################
+
+
+# This is the typename of the model.
+verdandi_gtest_model = "Verdandi::QuadraticModel\<real\>"
+
+# This is the path to the model implementation.
+verdandi_gtest_model_path = "\'\"model/QuadraticModel.cxx\"\'"
+
+# This list allows to suppress tests that cannot compile because of missing
+# methods.
+test_list_define = [
+    # If the model does not implement an adjoint method, comment this line
+    # out.
+    # "VERDANDI_TEST_ADJOINT"
+    ]
+
+
+#####################################
+## This part should not be touched ##
+#####################################
+
+
+# Path where "Verdandi.hxx" may be found.
+verdandi_path = "../../.."
+
+# Call to the main SConstruct.
+execfile(os.path.join(verdandi_path, "share/SConstruct"))
+
+
+for define in test_list_define:
+    env.Append(CPPDEFINES = define)
+
+# Defines three needed preprocessor macros.
+env.Append(CPPDEFINES = {'VERDANDI_GTEST_MODEL': verdandi_gtest_model})
+env.Append(CPPDEFINES = {'VERDANDI_GTEST_CONFIG_PATH':
+                             "\'\"configuration.lua\"\'"})
+env.Append(CPPDEFINES = {'VERDANDI_GTEST_MODEL_PATH':
+                             verdandi_gtest_model_path})
+
+
+# Allows to define a preprocessor macro using command line ("--define=").
+AddOption('--define',
+          dest = 'define',
+          type = 'string',
+          nargs = 1,
+          action = 'store',
+          metavar = 'DIR',
+          help = 'add a #define')
+
+DEFINE = GetOption('define')
+if DEFINE != None:
+    define_list = Split(DEFINE);
+    for define in define_list:
+        env.Append(CPPDEFINES = define)

@@ -1,0 +1,38 @@
+/*!     \file test_list.dox
+        \brief  Tests list.
+*/
+
+
+/*!
+\page  test_list Available tests
+
+
+\section model_test Model tests
+<ul>
+     <li>Basic tests: for the most basic functions of the model.</li>
+     <li>Adjoint tests: to check whether the model can be used with the 4DVAR method; to check the correctness of the tangent linear model and consistency between the tangent linear model and the adjoint model.</li>
+     <li>Time tests: check whether the model uses 'SetTime' in a correct way, and whether the model is consistent over time.</li>
+</ul>
+
+\section method_test Method tests
+<ul>
+     <li>Validity of the chi<sup>2</sup> diagnosis.</li>
+     <li>BLUE correctness.</li>
+     <li>Cholesky correctness.</li>
+     <li>Comparison between UKF and EKF: under given assomptions (linearity, same observations) EKF and UKF methods should produce the same results.</li>
+</ul>
+
+\section perf Performance tests
+<ul>
+     <li>Still in development: tests to compare computational times across methods. This is where the \ref perf_user_guide "performance module" is useful.</li>
+</ul>
+
+\section tools_tests Tools tests
+<ul>
+     <li>Test on 'RandomPerturbationManager' (chi<sup>2</sup>, diversity of numbers, mean of a normal distribution).</li>
+     <li>Test on 'TR1PerturbationManager' (chi<sup>2</sup>, diversity of numbers, mean of a normal distribution).</li>
+     <li>Correctness of the matrix inversion function.</li>
+</ul>
+
+
+*/

@@ -1,0 +1,1279 @@
+/*! \file glossary.dox
+    \brief Index of Seldon Functions and Methods.
+*/
+
+/*!
+\page glossary Index of Seldon Functions and Methods
+
+<table class="category-table">
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Add">Add </a></td> 
+ <td class="category-table-td"> adds two vectors/matrices </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#AddInteraction"> AddInteraction </a> (sparse vectors) </td>
+ <td class="category-table-td"> adds a coefficient to the vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#AddInteractionRow"> AddInteractionRow </a> (sparse vectors) </td>
+ <td class="category-table-td"> adds coefficients to the vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#AddInteraction"> AddInteraction </a> (sparse matrices) </td>
+ <td class="category-table-td"> adds/inserts an element in the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#AddInteractionColumn"> AddInteractionColumn </a> (sparse matrices) </td>
+ <td class="category-table-td"> adds/inserts elements in a matrix column </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#AddInteractionRow"> AddInteractionRow </a> (sparse matrices) </td>
+ <td class="category-table-td"> adds/inserts an element in a matrix row </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#Allocate"> Allocate </a>(Arpack interface)</td>
+<td class="category-table-td"> allocation of internal arrays </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="class_vector.php#Append"> Append </a> </td>
+ <td class="category-table-td"> appends an element to the end of the vector</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#GenRot">ApplyRot </a></td> 
+ <td class="category-table-td"> applies rotation to 2-D points </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#GenRot">ApplyModifRot </a></td> 
+ <td class="category-table-td"> applies rotation to 2-D points </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#ApplyPermutation">ApplyPermutation </a></td> 
+ <td class="category-table-td"> permutes row and column numbers of a matrix </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#ApplyPermutation">ApplyInversePermutation </a></td> 
+ <td class="category-table-td"> permutes row and column numbers of a matrix </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_vector.php#Assemble">Assemble </a></td> 
+ <td class="category-table-td"> assembles a vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Assemble"> Assemble </a> (sparse vectors) </td>
+ <td class="category-table-td"> sorts row numbers (duplicate values are summed) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#AssembleRow"> AssembleRow / AssembleColumn </a> (sparse matrices) </td>
+ <td class="category-table-td"> assembles a row </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#BiCg">BiCg</a></td>
+<td class="category-table-td"> BIConjugate Gradient </td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#BiCgcr">BiCgcr</a></td>
+<td class="category-table-td"> BIConjugate Gradient Conjugate Residual</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#BiCgStab">BiCgStab</a></td>
+<td class="category-table-td"> BIConjugate Gradient STABilized</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#BiCgStabl">BiCgStabl</a></td>
+<td class="category-table-td"> BIConjugate Gradient STABilized (L)</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#Cg">Cg</a></td>
+<td class="category-table-td"> Conjugate Gradient</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#Cgne">Cgne</a></td>
+<td class="category-table-td"> Conjugate Gradient Normal Equation</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#Cgs">Cgs</a></td>
+<td class="category-table-td"> Conjugate Gradient Squared</td></tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#CheckParameter"> CheckParameter </a>(Arpack interface)</td>
+<td class="category-table-td"> Checking input parameters </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Clear"> Clear </a> (dense vectors) </td>
+ <td class="category-table-td"> removes all elements of the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Clear"> Clear </a> (sparse vectors) </td>
+ <td class="category-table-td"> removes all elements of the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Clear"> Clear </a> (dense matrices) </td>
+ <td class="category-table-td"> removes all elements of the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Clear"> Clear </a> (sparse matrices) </td>
+ <td class="category-table-td"> removes all elements of the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Clear"> Clear </a> (3-D arrays) </td>
+ <td class="category-table-td"> removes all elements of the 3-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#Clear"> Clear </a> (4-D arrays) </td>
+ <td class="category-table-td"> removes all elements of the 4-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#Clear"> Clear </a> (N-D arrays) </td>
+ <td class="category-table-td"> removes all elements of the N-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector2.php#Clear"> Clear </a> (vector2) </td>
+ <td class="category-table-td"> removes all elements of an inner or outer vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector3.php#Clear"> Clear </a>(vector3) </td>
+ <td class="category-table-td"> removes all elements of an inner or outer vector </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="direct.php#Clear"> Clear </a>(direct solvers)</td>
+<td class="category-table-td"> Releases memory used by factorization </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#ilut_Clear"> Clear</a></td>
+<td class="category-table-td"> clears memory used by incomplete factorisation </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#Clear"> Clear </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Clears memory used by factorizations (if any present)</td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#Clear"> Clear </a>(Arpack interface)</td>
+<td class="category-table-td"> Clears memory used by internal arrays </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#ClearArpackVerbose"> ClearArpackVerbose </a></td>
+<td class="category-table-td"> returns to silent mode </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#ClearRow"> ClearRow / ClearColumn </a> (sparse matrices) </td>
+ <td class="category-table-td"> clears a row </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#CoCg">CoCg</a></td>
+<td class="category-table-td"> Conjugate Orthogonal Conjugate Gradient</td></tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#ComputeAndFactorizeStiffnessMatrix"> ComputeAndFactorizeStiffnessMatrix </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Computation and factorization of a M + b K </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#ComputeDiagonalMass"> ComputeDiagonalMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Computation of diagonal of M </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#ComputeMassForCholesky"> ComputeMassForCholesky </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Multiplication by M<sup>-1/2</sup> </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#ComputeMassMatrix"> ComputeMassMatrix </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Computation of mass matrix M </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#ComputeSolution"> ComputeSolution </a>(eigenvalue problem) </td>
+<td class="category-table-td"> Computation and factorization of a M + b K </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#ComputeStiffnessMatrix"> ComputeStiffnessMatrix </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Computation of stiffness matrix K </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Conjugate">Conjugate </a></td> 
+ <td class="category-table-td"> conjugates a vector/matrix </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#Continue"> Continue </a>(Arpack interface)</td>
+<td class="category-table-td"> performs one step of the algorithm, returns true if the iterative algorithm has ended </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_matrix.php#ConvertMatrix_from_Coordinates">ConvertMatrix_from_Coordinates </a></td> 
+ <td class="category-table-td"> conversion of a matrix given as a triplet (i, j, val) to a sparse matrix </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#ConvertMatrix_to_Coordinates">ConvertMatrix_to_Coordinates </a></td> 
+ <td class="category-table-td">conversion of a sparse matrix into coordinates format </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#ConvertToCSC">ConvertToCSC </a></td> 
+ <td class="category-table-td"> converts a sparse matrix to CSC (Compressed Sparse Column) format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_matrix.php#ConvertToCSR">ConvertToCSR </a></td> 
+ <td class="category-table-td"> converts a sparse matrix to CSR (Compressed Sparse Row) format </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#ConvertToSparse">ConvertToSparse </a></td> 
+ <td class="category-table-td"> converts dense matrices to sparse matrices by specifying a threshold. </td> </tr>
+
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Copy">Copy </a></td> 
+ <td class="category-table-td"> copies one vector into another one </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Copy"> Copy </a> (dense vectors) </td>
+ <td class="category-table-td"> copies a vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_matrix.php#Copy">Copy </a></td> 
+ <td class="category-table-td"> copies a sparse matrix into another one (conversion of format if needed) </td> </tr> 
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Copy"> Copy </a> (sparse vectors) </td>
+ <td class="category-table-td"> copies a vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Copy"> Copy </a> (dense matrices) </td>
+ <td class="category-table-td"> copies a matrix</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Copy"> Copy </a> (3-D arrays) </td>
+ <td class="category-table-td"> copies a 3-D array</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#Copy"> Copy </a> (4-D arrays) </td>
+ <td class="category-table-td"> copies a 4-D array</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#Copy"> Copy </a> (N-D arrays) </td>
+ <td class="category-table-td"> copies a N-D array</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector2.php#Copy"> Copy </a>(vector2) </td>
+ <td class="category-table-td"> copies a vector of vectors </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#Deallocate"> Deallocate </a>(Arpack interface)</td>
+<td class="category-table-td"> deallocation of internal arrays </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#SetDiagonalMass"> DiagonalMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns true if eigenvalues of M<sup>-1/2</sup> K M<sup>-1/2</sup>are searched (M diagonal) </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="direct.php#EnableOutOfCore">DisableOutOfCore</a></td>
+<td class="category-table-td"> Disable out-of-core computations</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="direct.php#RefineSolution">DoNotRefineSolution</a></td>
+<td class="category-table-td"> Does not refine the solution when calling solve</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#DotProd">DotProd </a></td> 
+ <td class="category-table-td"> scalar product between two vectors</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#DotProd">DotProdConj </a></td> 
+ <td class="category-table-td"> scalar product between two vectors, first vector being conjugated</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="direct.php#EnableOutOfCore">EnableOutOfCore</a></td>
+<td class="category-table-td"> Enables out-of-core computations</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="iterative.php#ErrorCode">ErrorCode</a> (iteration) </td>
+<td class="category-table-td"> returns error code </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="direct.php#Factorize"> Factorize </a></td>
+<td class="category-table-td"> Performs the factorization of a sparse matrix </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#FactorizeCholeskyMass"> FactorizeCholeskyMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Computation of Cholesky factor L of mass matrix (M = L L<sup>T</sup> </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#FactorizeDiagonalMass"> FactorizeDiagonalMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Computation of M<sup>1/2</sup>, once M is known </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="direct.php#FactorizeDistributed"> FactorizeDistributed </a></td>
+<td class="category-table-td"> Performs the factorization of a distributed matrix (parallel execution) </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="direct.php#Factorize">FactorizeMatrix</a></td>
+<td class="category-table-td"> performs LU factorization</td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#FactorizeMatrix"> FactorizeMatrix </a></td>
+<td class="category-table-td"> performs incomplete factorisation </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#Fail">Fail</a> (iteration) </td>
+<td class="category-table-td"> informs that the iterative solver failed</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Fill"> Fill </a> (dense vectors) </td>
+ <td class="category-table-td"> sets all elements to a given value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Fill"> Fill </a> (sparse vectors) </td>
+ <td class="category-table-td"> sets all elements to a given value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Fill"> Fill </a> (dense matrices) </td>
+ <td class="category-table-td"> sets all elements to a given value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Fill"> Fill </a> (sparse matrices) </td>
+ <td class="category-table-td"> sets all elements to a given value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Fill"> Fill </a> (3-D arrays) </td>
+ <td class="category-table-td"> sets all elements to a given value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#Fill"> Fill </a> (4-D arrays) </td>
+ <td class="category-table-td"> sets all elements to a given value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#Fill"> Fill </a> (N-D arrays) </td>
+ <td class="category-table-td"> sets all elements to a given value </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector2.php#Fill"> Fill </a> (vector2) </td>
+ <td class="category-table-td"> fills outer or inner vectors with the same value </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector3.php#Fill"> Fill </a> (vector3) </td>
+ <td class="category-table-td"> fills outer or inner vectors with the same value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#FillRand"> FillRand </a> (dense vectors) </td>
+ <td class="category-table-td"> fills randomly the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#FillRand"> FillRand </a> (sparse vectors) </td>
+ <td class="category-table-td"> fills randomly the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#FillRand"> FillRand </a> (dense matrices) </td>
+ <td class="category-table-td"> fills randomly the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#FillRand"> FillRand </a> (sparse matrices) </td>
+ <td class="category-table-td"> fills randomly the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#FillRand"> FillRand </a> (3-D arrays) </td>
+ <td class="category-table-td"> fills randomly the elements </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#FillRand"> FillRand </a> (4-D arrays) </td>
+ <td class="category-table-td"> fills randomly the elements </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#FillRand"> FillRand </a> (N-D arrays) </td>
+ <td class="category-table-td"> fills randomly the elements </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="direct.php#FindSparseOrdering">FindSparseOrdering</a></td>
+<td class="category-table-td"> computes matrix ordering to reduce fill-in during factorisation </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#Finish"> Finish </a>(Arpack interface)</td>
+<td class="category-table-td"> completes computation of eigenvalues and eigenvectors </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#Finished">Finished</a> (iteration) </td>
+<td class="category-table-td"> returns true if the stopping criteria are satisfied</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#First">First</a> (iteration) </td>
+<td class="category-table-td"> returns true for the first iteration</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector2.php#Flatten"> Flatten </a> (vector2) </td>
+ <td class="category-table-td"> copies the elements into a simple vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector3.php#Flatten"> Flatten </a> (vector3)</td>
+ <td class="category-table-td"> copies the elements into a simple vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_matrix.php#Gauss">Gauss </a></td> 
+ <td class="category-table-td"> basic Gauss pivoting for dense matrices. </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#GaussSeidel">GaussSeidel </a></td> 
+ <td class="category-table-td"> performs a Gauss-Seidel iteration for dense matrices. </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#Gcr">Gcr</a></td>
+<td class="category-table-td"> Generalized Conjugate Residual</td></tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="class_matrix.php#Get">Get </a> (dense matrices) </td> 
+ <td class="category-table-td"> returns reference to A(i, j) </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetAdditionalFillNumber"> GetAdditionalFillNumber </a></td>
+<td class="category-table-td"> returns the number of additional elements per row (used for ILUT(k))  </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_lapack.php#GetLU">GetAndSolveLU </a></td> 
+ <td class="category-table-td"> factorisation and resolution of a linear system </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="class_sparse_matrix.php#Get">Get </a> (sparse matrices) </td> 
+ <td class="category-table-td"> returns reference to A(i, j) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_lapack.php#GetCholesky">GetCholesky </a></td>
+ <td class="category-table-td"> performs a Cholesky (A =  LL<sup>T</sup>) factorization for symmetric positive definite matrices </td>
+ </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#GetCol">GetCol </a></td> 
+ <td class="category-table-td"> extracts a matrix column </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetConvergedNumber"> GetConvergedNumber </a>(Arpack interface)</td>
+<td class="category-table-td"> returns the number of converged eigenvalues </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetComputationalMode"> GetComputationalMode </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns the computational mode used (regular, shifted, ...) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetData"> GetData </a> (dense vectors) </td>
+ <td class="category-table-td"> returns a pointer to the array contained in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetData"> GetData </a> (sparse vectors)</td>
+ <td class="category-table-td"> returns a pointer to the values</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#GetData"> GetData </a> (dense matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array containing the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#GetData"> GetData </a> (sparse matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array containing the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#csr_GetData"> GetData </a> (CSR matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array containing the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#GetData"> GetData </a> (3-D arrays) </td>
+ <td class="category-table-td"> returns a pointer to the array containing the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#GetData"> GetData </a> (4-D arrays) </td>
+ <td class="category-table-td"> returns a pointer to the array containing the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#GetData"> GetData </a> (N-D arrays) </td>
+ <td class="category-table-td"> returns a pointer to the array containing the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetData"> GetDataConst </a> (dense vectors) </td>
+ <td class="category-table-td"> returns a pointer to the array contained in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetData"> GetDataConst </a> (sparse vectors) </td>
+ <td class="category-table-td"> returns a pointer to the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#GetData"> GetDataConst </a> (dense matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array  containing the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetData"> GetDataConstVoid </a> (dense vectors) </td>
+ <td class="category-table-td"> returns a pointer to the array contained in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetData"> GetDataConstVoid </a> (sparse vectors)</td>
+ <td class="category-table-td"> returns a pointer to the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#GetData"> GetDataConstVoid </a> (dense matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array containing the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#GetDataPointer"> GetDataPointer </a> (3-D arrays)</td>
+ <td class="category-table-td"> returns a pointer to A(i, j, k) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#GetDataPointer"> GetDataPointer </a> (4-D arrays) </td>
+ <td class="category-table-td"> returns a pointer to A(i, j, k, l) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetM"> GetDataSize </a> (dense vectors) </td>
+ <td class="category-table-td"> returns the number of elements in the vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetM"> GetDataSize </a> (sparse vectors) </td>
+ <td class="category-table-td"> returns the number of elements in the vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#GetDataSize"> GetDataSize </a> (dense matrices) </td>
+ <td class="category-table-td"> returns the number of elements effectively stored </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#GetDataSize"> GetDataSize </a> (sparse matrices) </td>
+ <td class="category-table-td"> returns the number of elements effectively stored </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#GetSize"> GetDataSize </a> (3-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements effectively stored </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#GetSize"> GetDataSize </a> (4-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements effectively stored </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#GetSize"> GetDataSize </a> (N-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements effectively stored </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetData"> GetDataVoid </a> (dense vectors) </td>
+ <td class="category-table-td"> returns a pointer to the array contained in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetData"> GetDataVoid </a> (sparse vectors) </td>
+ <td class="category-table-td"> returns a pointer to the values </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#GetData"> GetDataVoid </a> (dense matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array containing the values </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetDiagonalCoefficient"> GetDiagonalCoefficient </a></td>
+<td class="category-table-td"> returns diagonal coefficient used in ILUD </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="direct.php#GetDirectSolver"> GetDirectSolver </a></td>
+<td class="category-table-td"> Returns the direct solver that will be used during the factorization </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetDroppingThreshold"> GetDroppingThreshold </a></td>
+<td class="category-table-td"> returns threshold to determine elements to drop in ilut preconditioning</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetEigenvalues">GetEigenvalues </a></td> 
+ <td class="category-table-td"> computes eigenvalues</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetEigenvaluesEigenvectors">GetEigenvaluesEigenvectors </a></td> 
+ <td class="category-table-td"> computes eigenvalues and eigenvectors</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="eigenvalue.php#GetEigenvaluesEigenvectors">GetEigenvaluesEigenvectors </a></td> 
+ <td class="category-table-td"> computes some eigenvalues and eigenvectors of sparse matrices </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetEigenValue"> GetEigenValue </a>(Arpack interface)</td>
+<td class="category-table-td"> returns i-th eigenvalue </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetEigenVector"> GetEigenVector </a>(Arpack interface)</td>
+<td class="category-table-td"> returns pointer to i-th eigenvector </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetFactorisationType"> GetFactorisationType</a></td>
+<td class="category-table-td"> returns the type of incomplete factorisation </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#GetFillLevel"> GetFillLevel </a></td>
+<td class="category-table-td"> returns the fill-level k (if ILU(k) is set) </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetFirstWorkVector"> GetFirstWorkVector </a>(Arpack interface)</td>
+<td class="category-table-td"> returns pointer to first working vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_lapack.php#GetHessenberg">GetHessenberg </a></td> 
+ <td class="category-table-td"> reduces a dense matrix to its Hessenberg form </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetShiftValue"> GetImagShiftValue </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns imaginary part of the shift (real unsymmetric problem) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#csr_GetInd"> GetInd </a> (CSR matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array containing column numbers </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetIndex"> GetIndex </a> (sparse vectors)</td>
+ <td class="category-table-td"> returns a pointer to the row numbers </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#GetIndex"> GetIndex</a> (sparse matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array containing column numbers </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#csr_GetInd"> GetIndSize </a> (CSR matrices) </td>
+ <td class="category-table-td"> returns size of array Ind </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="direct.php#GetInfoFactorization"> GetInfoFactorization </a></td>
+<td class="category-table-td"> Returns an error code associated with the factorisation (0 if successful) </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetInfoFlag"> GetInfoFlag </a>(Arpack interface)</td>
+<td class="category-table-td"> returns info parameter (result of iterative algorithm) </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetInverse">GetInverse </a></td> 
+ <td class="category-table-td"> computes the matrix inverse </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetNumberIteration">GetNumberIteration</a> (iteration) </td>
+<td class="category-table-td"> returns iteration number </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetM"> GetLength </a> (dense vectors) </td>
+ <td class="category-table-td"> returns the number of elements in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetM"> GetLength </a> (sparse vectors)</td>
+ <td class="category-table-td"> returns the number of elements in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#GetLength"> GetLength </a> (N-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements along a dimension of the array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector2.php#GetLength"> GetLength </a> (vector2) </td>
+ <td class="category-table-td"> returns the size of inner vectors or outer vectors </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector3.php#GetLength"> GetLength </a> (vector3)</td>
+ <td class="category-table-td"> returns the size of inner vectors or outer vectors </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#GetLength1"> GetLength1 </a> (3-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the first dimension of 3-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#GetLength1"> GetLength1 </a> (4-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the first dimension of 4-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#GetLength2"> GetLength2 </a> (3-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the second dimension of 3-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#GetLength2"> GetLength2 </a> (4-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the second dimension of 4-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#GetLength3"> GetLength3 </a> (3-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the third dimension of 3-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#GetLength3"> GetLength3 </a> (4-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the third dimension of 4-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#GetLength4"> GetLength4 </a> (4-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the fourth dimension of 4-D array </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetLQ">GetLQ </a></td> 
+ <td class="category-table-td"> LQ factorization of matrix </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetLU">GetLU</a></td> 
+ <td class="category-table-td"> performs a LU (or LDL^t) factorization</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetM"> GetM </a> (dense vectors) </td>
+ <td class="category-table-td"> returns the number of elements in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetM"> GetM </a> (sparse vectors)</td>
+ <td class="category-table-td"> returns the number of non-zero entries in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#GetM"> GetM </a> (dense matrices) </td>
+ <td class="category-table-td"> returns the number of rows in the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#GetM"> GetM </a> (sparse matrices) </td>
+ <td class="category-table-td"> returns the number of rows in the matrix </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#GetMaxAbsIndex">GetMaxAbsIndex </a></td> 
+ <td class="category-table-td"> returns index where highest absolute value is reached </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#GetN"> GetN </a> (dense matrices) </td>
+ <td class="category-table-td"> returns the number of columns in the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#GetN"> GetN </a> (sparse matrices) </td>
+ <td class="category-table-td"> returns the number of columns in the matrix </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetNbArnoldiVectors"> GetNbArnoldiVectors </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns the number of Arnoldi vectors </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetNbAskedEigenvalues"> GetNbAskedEigenvalues </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns the number of wanted eigenvalues </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetNbMatrixVectorProducts"> GetNbMatrixVectorProducts </a>(eigenvalue problem) </td>
+<td class="category-table-td"> Returns the number of iterations performed by the iterative process </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#SetNbMaximumIterations"> GetNbMaximumIterations </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns the maximum number of iterations allowed for the iterative process </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector2.php#GetNelement"> GetNelement </a> (vector2)</td>
+ <td class="category-table-td"> returns the total number of elements stored </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector3.php#GetNelement"> GetNelement </a> (vector3)</td>
+ <td class="category-table-td"> returns the total number of elements stored </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#GetDataSize"> GetNonZeros </a> (sparse matrices) </td>
+ <td class="category-table-td"> returns the number of elements effectively stored </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetNormInf"> GetNormInf </a> (dense vectors) </td>
+ <td class="category-table-td"> returns highest absolute value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetNormInf"> GetNormInf </a> (sparse vectors) </td>
+ <td class="category-table-td"> returns highest absolute value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetNormInf"> GetNormInfIndex </a> (dense vectors) </td>
+ <td class="category-table-td"> returns the index of the highest absolute value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetNormInf"> GetNormInfIndex </a> (sparse vectors) </td>
+ <td class="category-table-td"> returns the index of the highest absolute value </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetPivotBlockInteger"> GetPivotBlockInteger </a></td>
+<td class="category-table-td"> returns the maximum k = |i-j| allowed when pivoting for ilut preconditioning </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetPivotThreshold"> GetPivotThreshold </a></td>
+<td class="category-table-td"> returns threshold used when pivoting columns for ilut preconditioning </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetPrintLevel"> GetPrintLevel </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns the print level </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#csr_GetPtr"> GetPtr </a> (CSR matrices) </td>
+ <td class="category-table-td"> returns a pointer to the array containing row numbers </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#csr_GetPtr"> GetPtrSize </a> (CSR matrices) </td>
+ <td class="category-table-td"> returns size of array Ptr </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetQ_FromQR">GetQ_FromQR </a></td> 
+ <td class="category-table-td"> Forms explicitely Q from QR factorization</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetQ_FromQR">GetQ_FromLQ </a></td> 
+ <td class="category-table-td"> Forms explicitely Q from LQ factorization</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetQR">GetQR </a></td> 
+ <td class="category-table-td"> QR factorization of matrix </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetQR">GetQR_Pivot </a></td> 
+ <td class="category-table-td"> QR factorization of matrix with pivoting</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetRestart">GetRestart</a> (iteration) </td>
+<td class="category-table-td"> returns restart parameter </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetReverseCommunicationFlag"> GetReverseCommunicationFlag </a>(Arpack interface)</td>
+<td class="category-table-td"> returns reverse-communication flag (ido parameter) </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#GetRow">GetRow </a></td> 
+ <td class="category-table-td"> extracts a matrix row </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#GetRowSize"> GetRowSize / GetColumnSize </a> (sparse matrices) </td>
+ <td class="category-table-td"> returns the number of elements in the row </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetSecondWorkVector"> GetSecondWorkVector </a>(Arpack interface)</td>
+<td class="category-table-td"> returns pointer to second working vector </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetScalingFactors">GetScalingFactors </a></td> 
+ <td class="category-table-td"> computes row and column scalings to equilibrate a matrix</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="direct.php#GetSchurMatrix">GetSchurMatrix</a></td>
+<td class="category-table-td"> forms Schur complement</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="direct.php#GetSchurMatrix_func">GetSchurMatrix</a></td>
+<td class="category-table-td"> forms Schur complement</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector2.php#GetShape"> GetShape </a>(vector2) </td>
+ <td class="category-table-td"> returns the number of elements contained in an inner vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector3.php#GetShape"> GetShape </a> (vector3)</td>
+ <td class="category-table-td"> returns the number of vectors contained in an inner vector </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetShiftValue"> GetShiftValue </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns the shift </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#GetM"> GetSize </a> (dense vectors) </td>
+ <td class="category-table-td"> returns the number of elements in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#GetM"> GetSize </a> (sparse vectors)</td>
+ <td class="category-table-td"> returns the number of elements in the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#GetSize"> GetSize </a> (dense matrices) </td>
+ <td class="category-table-td"> returns the number of elements in the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#GetSize"> GetSize </a> (3-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the 3-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#GetSize"> GetSize </a> (4-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the 4-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#GetSize"> GetSize </a> (N-D arrays) </td>
+ <td class="category-table-td"> returns the number of elements in the multidimensional array </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector2.php#GetLength"> GetSize </a>(vector2) </td>
+ <td class="category-table-td"> returns the size of inner vector or outer vectors </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector3.php#GetLength"> GetSize </a> (vector3)</td>
+ <td class="category-table-td"> returns the size of inner vector or outer vectors </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#SetStoppingCriterion"> GetStoppingCriterion </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns the stopping criterion used by iterative process </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetSVD">GetSVD </a></td> 
+ <td class="category-table-td"> performs singular value decomposition (SVD) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_matrix.php#GetSymmetricPattern">GetSymmetricPattern </a></td> 
+ <td class="category-table-td"> computes the sparsity pattern of A + A' </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="direct.php#GetTypeOrdering"> GetTypeOrdering </a></td>
+<td class="category-table-td"> Returns the ordering to use when the matrix will be reordered </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetTypeSorting"> GetTypeSorting </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns how eigenvalues are sorted (real part, modulus, etc) </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#GetTypeSpectrum"> GetTypeSpectrum </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns the type of spectrum wanted by the user </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetTolerance">GetTolerance</a> (iteration) </td>
+<td class="category-table-td"> returns stopping criterion </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector2.php#GetVector"> GetVector </a> (vector2)</td>
+ <td class="category-table-td"> returns outer or inner vectors as reference </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector3.php#GetVector"> GetVector </a> (vector3) </td>
+ <td class="category-table-td"> returns outer or inner vectors as reference </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#Gmres">Gmres</a></td>
+<td class="category-table-td"> Generalized Minimum RESidual</td></tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector2.php#HasSameShape"> HasSameShape </a> (vector2) </td>
+ <td class="category-table-td"> returns true if all inner vectors have the same size </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#IncrementProdMatVect"> IncrementProdMatVect </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Increments the number of iterations performed by the iterative process </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Index"> Index </a> (sparse vectors)</td>
+ <td class="category-table-td"> access to row number</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Index"> Index </a> (sparse matrices) </td>
+ <td class="category-table-td"> direct access to a column number</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#Init">Init</a> (iteration) </td>
+<td class="category-table-td"> provides right hand side</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#Init"> Init </a></td>
+<td class="category-table-td"> Initialization of the eigenvalue problem </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#Init_arpack"> Init </a>(Arpack interface)</td>
+<td class="category-table-td"> Initialization of eigenvalue problem </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#InitMatrix"> InitMatrix </a> (eigenvalue problem)</td>
+<td class="category-table-td"> Stiffness matrix (and optionall mass matrix) is given  </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#InitSymmetricPreconditioning"> InitSymmetricPreconditioning</a></td>
+<td class="category-table-td"> Symmetric SOR will be used </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#InitSymmetricPreconditioning"> InitUnSymmetricPreconditioning </a></td>
+<td class="category-table-td"> SOR will be used </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_matrix.php#IsComplexMatrix">IsComplexMatrix </a></td> 
+ <td class="category-table-td"> returns true if the matrix is complex </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector2.php#IsEmpty"> IsEmpty </a> (vector2) </td>
+ <td class="category-table-td"> returns true if all inner vectors have 0-length </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#IsSymmetricMatrix">IsSymmetricMatrix </a></td> 
+ <td class="category-table-td"> returns true if the matrix is symmetric </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#SetInitGuess">IsInitGuess_Null</a> (iteration) </td>
+<td class="category-table-td"> returns true if the initial guess is zero</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#IsSymmetricProblem"> IsSymmetricProblem </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns true if the stiffness matrix is symmetric </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#Lsqr">Lsqr</a></td>
+<td class="category-table-td"> Least SQuaRes</td></tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#MaxAbs">MaxAbs </a></td> 
+ <td class="category-table-td"> returns highest absolute value of A </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_vector.php#MergeSort">MergeSort </a></td> 
+ <td class="category-table-td"> sorts a vector with merge sort algorithm</td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#MinRes">MinRes</a></td>
+<td class="category-table-td"> Minimum RESidual</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="direct.php#Mlt"> Mlt </a> (direct solvers)</td>
+<td class="category-table-td"> computation of y = L<sup>T</sup> x or y = L^x for Cholesky solver</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Mlt">Mlt </a></td> 
+ <td class="category-table-td"> multiplication by a scalar or matrix-vector product </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#MltAdd">MltAdd </a></td> 
+ <td class="category-table-td"> performs a matrix-vector or matrix-matrix product </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_lapack.php#GetCholesky">MltCholesky </a></td>
+ <td class="category-table-td"> performs matrix vector product by using Cholesky factorization</td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#MltCholeskyMass"> MltCholeskyMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Multiplication by L or L<sup>T</sup> </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#MltSqrtDiagonalMass"> MltInvSqrtDiagonalMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Multiplication by M<sup>-1/2</sup> </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#MltMass"> MltMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Multiplication by mass matrix M </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#MltQ_FromQR">MltQ_FromQR </a></td> 
+ <td class="category-table-td"> multiplies vector by Q </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_lapack.php#MltQ_FromQR">MltQ_FromLQ </a></td> 
+ <td class="category-table-td"> multiplies vector by Q </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#MltSqrtDiagonalMass"> MltSqrtDiagonalMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Multiplication by M<sup>1/2</sup> </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#MltStiffness"> MltStiffness </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Multiplication by stiffness matrix K </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Norm1">Norm1 </a></td> 
+ <td class="category-table-td"> returns 1-norm of a vector </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#Norm1">Norm1 </a></td> 
+ <td class="category-table-td"> returns 1-norm of A </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Norm2">Norm2 </a></td> 
+ <td class="category-table-td"> returns 2-norm of a vector</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#NormInf">NormInf </a></td> 
+ <td class="category-table-td"> returns infinity-norm of A </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Nullify"> Nullify </a> (dense vectors) </td>
+ <td class="category-table-td"> clears the vector without releasing memory</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Nullify"> Nullify </a> (sparse vectors) </td>
+ <td class="category-table-td"> clears the vector without releasing memory</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Nullify"> Nullify </a> (dense matrices) </td>
+ <td class="category-table-td"> clears the matrix without releasing memory</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Nullify"> Nullify </a> (sparse matrices) </td>
+ <td class="category-table-td"> removes elements of the matrix without releasing memory</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#csr_Nullify"> Nullify </a> (CSR matrices) </td>
+ <td class="category-table-td"> clears the matrix without releasing memory</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Nullify"> Nullify </a> (3-D arrays) </td>
+ <td class="category-table-td"> clears the 3-D array without releasing memory</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="direct.php#PerformAnalysis">PerformAnalysis</a></td>
+<td class="category-table-td"> Performs an analysis of linear system to factorize</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="direct.php#PerformAnalysis">PerformFactorization</a></td>
+<td class="category-table-td"> Performs a factorization of linear system, assuming that PerformAnalysis has been called</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Print"> Print </a> (dense vectors) </td>
+ <td class="category-table-td"> displays the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Print"> Print </a> (sparse vectors) </td>
+ <td class="category-table-td"> displays the vector </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Print"> Print </a> (dense matrices) </td>
+ <td class="category-table-td"> displays the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Print"> Print </a> (sparse matrices) </td>
+ <td class="category-table-td"> displays the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Print"> Print </a> (3-D arrays) </td>
+ <td class="category-table-td"> displays the 3-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#Print"> Print </a> (4-D arrays) </td>
+ <td class="category-table-td"> displays the 4-D array </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#Print"> Print </a> (N-D arrays) </td>
+ <td class="category-table-td"> displays the N-D array </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector2.php#Print"> Print </a> (vector2)</td>
+ <td class="category-table-td"> displays the object </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector3.php#Print"> Print </a> (vector3)</td>
+ <td class="category-table-td"> displays the object </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#PrintErrorInit"> PrintErrorInit </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Prints an error message if InitMatrix has not been called </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#PrintRow"> PrintRow / PrintColumn </a> (sparse matrices) </td>
+ <td class="category-table-td"> prints a row </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#PushBack"> PushBack </a> (dense vectors) </td>
+ <td class="category-table-td"> adds an element to the end of the vector</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector2.php#PushBack"> PushBack </a> (vector2)</td>
+ <td class="category-table-td"> appends outer or inner vectors at the end </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector3.php#PushBack"> PushBack </a> (vector3)</td>
+ <td class="category-table-td"> appends outer or inner vectors at the end </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#QCgs">QCgs</a></td>
+<td class="category-table-td"> Quasi Conjugate Gradient Squared</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#Qmr">Qmr</a></td>
+<td class="category-table-td"> Quasi Minimum Residual</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#QmrSym">QmrSym</a></td>
+<td class="category-table-td"> Quasi Minimum Residual SYMmetric</td></tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_vector.php#QuickSort">QuickSort </a></td> 
+ <td class="category-table-td"> sorts a vector with quick sort algorithm</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Rank1Update">Rank1Update </a></td> 
+ <td class="category-table-td"> Adds a contribution X.Y' to a matrix </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Rank2Update">Rank2Update </a></td> 
+ <td class="category-table-td"> Adds a contribution X.Y' + Y.X' to a symmetric matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Read"> Read </a> (dense vectors) </td>
+ <td class="category-table-td"> reads the vector in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Read"> Read </a> (sparse vectors) </td>
+ <td class="category-table-td"> reads the vector in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Read"> Read </a> (dense matrices) </td>
+ <td class="category-table-td"> reads the matrix in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Read"> Read </a> (sparse matrices) </td>
+ <td class="category-table-td"> reads the matrix in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Read"> Read </a> (3-D arrays) </td>
+ <td class="category-table-td"> reads the 3-D array in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#Read"> Read </a> (4-D arrays) </td>
+ <td class="category-table-td"> reads the 4-D array in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#Read"> Read </a> (N-D arrays) </td>
+ <td class="category-table-td"> reads the N-D array in binary format </td> </tr>
+ <tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_matrix.php#ReadCoordinateMatrix">ReadCoordinateMatrix</a></td> 
+ <td class="category-table-td"> reads a matrix in coordinate format (as in Matlab) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#ReadText"> ReadText </a> (dense vectors) </td>
+ <td class="category-table-td"> reads the vector in text format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#ReadText"> ReadText </a> (sparse vectors) </td>
+ <td class="category-table-td"> reads the vector in text format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#ReadText"> ReadText </a> (dense matrices) </td>
+ <td class="category-table-td"> reads the matrix in text format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#ReadText"> ReadText </a> (sparse matrices) </td>
+ <td class="category-table-td"> reads the matrix in text format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Reallocate"> Reallocate </a> (dense vectors) </td>
+ <td class="category-table-td"> changes the size of vector (removes previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Reallocate"> Reallocate </a> (sparse vectors) </td>
+ <td class="category-table-td"> changes the size of vector (removes previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Reallocate"> Reallocate </a> (dense matrices) </td>
+ <td class="category-table-td"> changes the size of matrix (does not keep previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Reallocate"> Reallocate </a> (sparse matrices) </td>
+ <td class="category-table-td"> changes the size of matrix (does not keep previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Reallocate"> Reallocate </a> (3-D arrays) </td>
+ <td class="category-table-td"> changes the size of 3-D array (does not keep previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#Reallocate"> Reallocate </a> (4-D arrays) </td>
+ <td class="category-table-td"> changes the size of 4-D array (does not keep previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#Reallocate"> Reallocate </a> (N-D arrays) </td>
+ <td class="category-table-td"> changes the size of N-D array (does not keep previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="vector2.php#Reallocate"> Reallocate </a> (vector2)</td>
+ <td class="category-table-td"> modifies the size of outer vectors or inner vectors </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector3.php#Reallocate"> Reallocate </a> (vector3) </td>
+ <td class="category-table-td"> modifies the size of outer vectors or inner vectors </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#ReallocateRow"> ReallocateRow / ReallocateColumn </a> (sparse matrices) </td>
+ <td class="category-table-td"> changes the size of a row </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#ReciprocalConditionNumber">ReciprocalConditionNumber </a></td> 
+ <td class="category-table-td"> computes the inverse of matrix condition number</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="direct.php#RefineSolution">RefineSolution</a></td>
+<td class="category-table-td"> Refines the solution when calling solve</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#RefineSolutionLU">RefineSolutionLU</a></td> 
+ <td class="category-table-td"> improves solution computed by SolveLU</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_vector.php#RemoveDuplicate">RemoveDuplicate </a></td> 
+ <td class="category-table-td"> sorts and removes duplicate elements of a vector</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="class_sparse_vector.php#RemoveSmallEntry">RemoveSmallEntry </a> (sparse vectors) </td> 
+ <td class="category-table-td"> drops small entries of the vector </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="class_sparse_matrix.php#RemoveSmallEntry">RemoveSmallEntry </a> (sparse matrices) </td> 
+ <td class="category-table-td"> drops small entries of the matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#ReplaceIndexRow"> ReplaceIndexRow / ReplaceIndexColumn </a> (sparse matrices) </td>
+ <td class="category-table-td"> changes column numbers </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Resize"> Resize </a> (dense vectors) </td>
+ <td class="category-table-td"> changes the size of vector (keeps previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Resize"> Resize </a> (sparse vectors) </td>
+ <td class="category-table-td"> changes the size of vector (keeps previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Resize"> Resize </a> (dense matrices) </td>
+ <td class="category-table-td"> changes the size of matrix (keeps previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Resize"> Resize </a> (sparse matrices) </td>
+ <td class="category-table-td"> changes the size of matrix (keeps previous elements) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#ResizeRow"> ResizeRow / ResizeColumn </a> (sparse matrices) </td>
+ <td class="category-table-td"> changes the size of a row and keeps previous values</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#ScaleLeftMatrix">ScaleLeftMatrix </a></td> 
+ <td class="category-table-td"> multiplies rows of a matrix by coefficients</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#ScaleMatrix">ScaleMatrix </a></td> 
+ <td class="category-table-td"> multiplies rows and columns of a matrix by coefficients </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#ScaleRightMatrix">ScaleRightMatrix </a></td> 
+ <td class="category-table-td"> multiplies columns of a matrix by coefficients</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="vector2.php#Select"> Select </a> (vector2) </td>
+ <td class="category-table-td"> keeps a subset of inner vectors </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="direct.php#SelectDirectSolver"> SelectDirectSolver </a></td>
+<td class="category-table-td"> Sets the direct solver to use (e.g. Mumps, Pastix, SuperLU) </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="direct.php#SelectOrdering"> SelectOrdering </a></td>
+<td class="category-table-td"> Sets the ordering to use when the matrix will be reordered </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="class_matrix.php#Set">Set </a>(dense matrices)</td> 
+ <td class="category-table-td"> modifies value of A(i, j) </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="class_sparse_matrix.php#Set">Set </a>(sparse matrices)</td> 
+ <td class="category-table-td"> modifies value of A(i, j) </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetAdditionalFillNumber"> SetAdditionalFillNumber </a></td>
+<td class="category-table-td"> sets the number of additional elements per row (used for ILUT(k))  </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#SetArpackVerbose"> SetArpackVerbose </a></td>
+<td class="category-table-td"> switches to verbose mode </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#SetCol">SetCol </a></td> 
+ <td class="category-table-td"> changes a matrix column </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#SetCholeskyFactoForMass"> SetCholeskyFactoForMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Tells to find eigenvalues of L<sup>-1</sup> K L<sup>-T</sup> if M = L L<sup>T</sup> </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetComputationalMode"> SetComputationalMode </a>(eigenvalue problem) </td>
+<td class="category-table-td"> Sets the computational mode used (regular, shifted, ...) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#SetData"> SetData </a> (dense vectors) </td>
+ <td class="category-table-td"> sets the pointer to the array contained in the vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#SetData"> SetData </a> (sparse vectors) </td>
+ <td class="category-table-td"> sets the pointer to the array contained in the vector</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#SetData"> SetData </a> (dense matrices) </td>
+ <td class="category-table-td"> sets the pointer to the array containing the values</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#SetData"> SetData </a> (sparse matrices) </td>
+ <td class="category-table-td"> sets the pointer to the arrays containing values and column numbers </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#csr_SetData"> SetData </a> (CSR matrices) </td>
+ <td class="category-table-td"> sets the pointer to the array containing the values</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#SetData"> SetData </a> (3-D arrays) </td>
+ <td class="category-table-td"> sets the pointer to the array containing the values</td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#GetDiagonalCoefficient"> SetDiagonalCoefficient </a></td>
+<td class="category-table-td"> sets diagonal coefficient used in ILUD </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#SetDiagonalMass"> SetDiagonalMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Tells to find eigenvalues of M<sup>-1/2</sup> K M<sup>-1/2</sup>are searched (M diagonal) </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#GetDroppingThreshold"> SetDroppingThreshold </a></td>
+<td class="category-table-td"> sets threshold to determine elements to drop for ilut preconditioning</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetFactorisationType"> SetFactorisationType</a></td>
+<td class="category-table-td"> sets the type of incomplete factorisation </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#GetFillLevel"> SetFillLevel </a></td>
+<td class="category-table-td"> sets the fill-level k (if ILU(k) is set) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#SetIdentity"> SetIdentity </a> (dense matrices) </td>
+ <td class="category-table-td"> sets matrix to identity matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#SetIdentity"> SetIdentity </a> (sparse matrices) </td>
+ <td class="category-table-td"> sets matrix to identity matrix </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetInfoFlag"> SetInfoFlag </a>(Arpack interface)</td>
+<td class="category-table-td"> modifies info parameter </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#SetInitGuess">SetInitGuess</a> (iteration) </td>
+<td class="category-table-td"> informs if the initial guess is zero or no</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetNumberIteration">SetNumberIteration</a> (iteration) </td>
+<td class="category-table-td"> changes iteration number </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#SetMaxIterationNumber">SetMaxIterationNumber</a> (iteration) </td>
+<td class="category-table-td"> changes maximum number of iterations</td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetNbArnoldiVectors"> SetNbArnoldiVectors </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Sets the number of Arnoldi vectors </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetNbAskedEigenvalues"> SetNbAskedEigenvalues </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Sets the number of wanted eigenvalues </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#SetNbMaximumIterations"> SetNbMaximumIterations </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Sets the maximum number of iterations allowed for the iterative process </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="direct.php#SetNumberOfThreadPerNode"> SetNumberOfThreadPerNode </a></td>
+<td class="category-table-td"> Sets the number of threads per node (relevant for Pastix only) </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#SetNumberIterations"> SetNumberIterations </a></td>
+<td class="category-table-td"> changes the number of iterations for SOR preconditioning </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#SetParameterRelaxation"> SetParameterRelaxation </a></td>
+<td class="category-table-td"> changes the relaxation parameter of SOR preconditioning </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="direct.php#SetPermutation"> SetPermutation </a></td>
+<td class="category-table-td"> Provides manually the permutation array used to reorder the matrix </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetPivotBlockInteger"> SetPivotBlockInteger </a></td>
+<td class="category-table-td"> sets the maximum k = |i-j| allowed when pivoting for ilut preconditioning </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetPivotThreshold"> SetPivotThreshold </a></td>
+<td class="category-table-td"> sets threshold used when pivoting columns for ilut preconditioning </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetPrintLevel"> SetPrintLevel </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Sets the print level </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetRestart">SetRestart</a> (iteration) </td>
+<td class="category-table-td"> changes restart parameter </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetReverseCommunicationFlag"> SetReverseCommunicationFlag </a>(Arpack interface)</td>
+<td class="category-table-td"> modifies reverse-communication flag (ido parameter) </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#SetRow">SetRow </a></td> 
+ <td class="category-table-td"> changes a matrix row </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#SetStoppingCriterion"> SetStoppingCriterion </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Sets the stopping criterion used by iterative process </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#SetSymmetricAlgorithm"> SetSymmetricAlgorithm </a></td>
+<td class="category-table-td"> sets symmetric incomplete factorisation </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#GetTolerance">SetTolerance</a> (iteration) </td>
+<td class="category-table-td"> changes stopping criterion </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="eigenvalue.php#GetTypeSpectrum"> SetTypeSpectrum </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Sets the of spectrum wanted by the user </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#SetUnsymmetricAlgorithm"> SetSymmetricAlgorithm </a></td>
+<td class="category-table-td"> sets unsymmetric incomplete factorisation (even for symmetric matrices) </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#messages">ShowMessages</a> (iteration) </td>
+<td class="category-table-td"> displays residual each 100 iterations</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#messages">ShowFullHistory</a> (iteration) </td>
+<td class="category-table-td"> displays residual each iteration</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Solve">Solve </a></td> 
+ <td class="category-table-td"> solves a triangular system </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="direct.php#Solve"> Solve </a>(direct solvers)</td>
+<td class="category-table-td"> Solves A x = b or A<sup>T</sup> x = b, assuming that Factorize has been called</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="iterative.php#Solve"> Solve </a> (preconditioning) </td>
+<td class="category-table-td"> Applies the preconditioner </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="iterative.php#sor_Solve"> Solve</a></td>
+<td class="category-table-td"> Applies SOR preconditioning </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"> <a href="iterative.php#ilut_Solve"> Solve</a></td>
+<td class="category-table-td"> Applies ilut preconditioning </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetCholesky">SolveCholesky </a></td>
+ <td class="category-table-td"> solves linear system by using Cholesky factorization</td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#MltCholeskyMass"> SolveCholeskyMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Resolution of L x = b or L<sup>T</sup> x = b </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="direct.php#SolveDistributed"> SolveDistributed </a></td>
+<td class="category-table-td"> Solves A x = b or A<sup>T</sup> x = b, assuming that FactorizeDistributed has been called </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#SolveHessenberg">SolveHessenberg </a></td> 
+ <td class="category-table-td"> resolution of H X = Y with H an Hessenberg matrix </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"><a href="functions_lapack.php#SolveHessenbergTwo">SolveHessenbergTwo </a></td> 
+ <td class="category-table-td"> resolution of H X = Y with H a matrix with two sub-diagonals non-null </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetLQ">SolveLQ </a></td> 
+ <td class="category-table-td"> solves least-square problems by using LQ factorization </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetLU">SolveLU</a></td> 
+ <td class="category-table-td"> solve linear system by using LU factorization</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#GetQR">SolveQR </a></td> 
+ <td class="category-table-td"> solves least-square problems by using QR factorization</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_lapack.php#SolveSylvester">SolveSylvester </a></td> 
+ <td class="category-table-td"> resolution of Sylvester equation A X B* + C X D* = E</td> </tr>
+ <tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="iterative.php#SOR">SOR</a></td> 
+ <td class="category-table-td"> applies successive over-relaxations to matrix</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_vector.php#Sort">Sort </a></td> 
+ <td class="category-table-td"> sorts a vector</td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_blas.php#Swap">Swap </a></td> 
+ <td class="category-table-td"> exchanges two vectors </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#SwapRow"> SwapRow / SwapColumn </a> (sparse matrices) </td>
+ <td class="category-table-td"> exchanges two rows </td> </tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#Symmlq">Symmlq</a></td>
+<td class="category-table-td"> SYMMetric Least sQuares</td></tr>
+<tr class="category-table-tr-2">
+<td class="category-table-td"> <a href="iterative.php#TfQmr">TfQmr</a></td>
+<td class="category-table-td"> Transpose Free Quasi Minimum Residual</td></tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#Transpose">Transpose </a></td> 
+ <td class="category-table-td"> replaces a matrix by its transpose </td> </tr>
+<tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#Transpose">TransposeConj </a></td> 
+ <td class="category-table-td"> replaces a matrix by its conjugate transpose </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="iterative.php#Solve">TransSolve</a> (preconditioning) </td>
+<td class="category-table-td"> Applies the transpose of the preconditioner </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="iterative.php#sor_Solve"> TransSolve</a></td>
+<td class="category-table-td"> Applies transpose of SOR preconditioning </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="iterative.php#ilut_Solve"> TransSolve</a></td>
+<td class="category-table-td"> Applies the transpose of ilut preconditioning </td> </tr>
+<tr class="category-table-tr-1">
+<td class="category-table-td"> <a href="eigenvalue.php#SetCholeskyFactoForMass"> UseCholeskyFactoForMass </a>(eigenvalue problem)</td>
+<td class="category-table-td"> Returns true if eigenvalues of L<sup>-1</sup> K L<sup>-T</sup>are searched (M = L L<sup>T</sup>) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Val"> Val </a> (sparse vectors) </td>
+ <td class="category-table-td"> access to V(i)</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Val"> Val </a> (dense matrices) </td>
+ <td class="category-table-td"> access to a matrix element</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Val"> Val </a> (sparse matrices) </td>
+ <td class="category-table-td"> access to a matrix element</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Value"> Value </a> (sparse vectors) </td>
+ <td class="category-table-td"> access to value </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Value"> Value </a> (sparse matrices) </td>
+ <td class="category-table-td"> direct access to a value</td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Write"> Write </a> (dense vectors) </td>
+ <td class="category-table-td"> writes the vector in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Write"> Write </a> (sparse vectors) </td>
+ <td class="category-table-td"> writes the vector in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Write"> Write </a> (dense matrices) </td>
+ <td class="category-table-td"> writes the matrix in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Write"> Write </a> (sparse matrices) </td>
+ <td class="category-table-td"> writes the matrix in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Write"> Write </a> (3-D arrays) </td>
+ <td class="category-table-td"> writes the 3-D array in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#Write"> Write </a> (4-D arrays) </td>
+ <td class="category-table-td"> writes the 4-D array in binary format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#Write"> Write </a> (N-D arrays) </td>
+ <td class="category-table-td"> writes the N-D array in binary format </td> </tr>
+ <tr class="category-table-tr-2">
+ <td class="category-table-td"><a href="functions_matrix.php#WriteCoordinateMatrix">WriteCoordinateMatrix</a></td> 
+ <td class="category-table-td"> writes a matrix in coordinate format (as in Matlab) </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#WriteText"> WriteText </a> (dense vectors) </td>
+ <td class="category-table-td"> writes the vector in text format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#WriteText"> WriteText </a> (sparse vectors) </td>
+ <td class="category-table-td"> writes the vector in text format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#WriteText"> WriteText </a> (dense matrices) </td>
+ <td class="category-table-td"> writes the matrix in text format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#WriteText"> WriteText </a> (sparse matrices) </td>
+ <td class="category-table-td"> writes the matrix in text format </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_vector.php#Zero"> Zero </a> (dense vectors) </td>
+ <td class="category-table-td"> sets all elements to zero </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_vector.php#Zero"> Zero </a> (sparse vectors) </td>
+ <td class="category-table-td"> sets all elements to zero </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_matrix.php#Zero"> Zero </a> (dense matrices) </td>
+ <td class="category-table-td"> sets all elements to zero </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="class_sparse_matrix.php#Zero"> Zero </a> (sparse matrices) </td>
+ <td class="category-table-td"> sets all elements to zero </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array3d.php#Zero"> Zero </a> (3-D arrays) </td>
+ <td class="category-table-td"> sets all elements to zero </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="array4d.php#Zero"> Zero </a> (4-D arrays) </td>
+ <td class="category-table-td"> sets all elements to zero </td> </tr>
+<tr class="category-table-tr-1">
+ <td class="category-table-td"> <a href="arraynd.php#Zero"> Zero </a> (N-D arrays) </td>
+ <td class="category-table-td"> sets all elements to zero </td> </tr>
+</table>
+
+*/

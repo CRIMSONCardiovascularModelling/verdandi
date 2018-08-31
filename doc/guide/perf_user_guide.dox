@@ -1,0 +1,32 @@
+/*!
+        \file perf_user_guide.dox
+        \brief Perf user's guide.
+*/
+
+/*!
+\page perf_user_guide Perfomance module user's guide
+
+\section base_timer_perf This module is a simple timer used to track time into your code
+
+Below are the recommended steps to follow in order to assess the performance of your software. For an example, one can refer to "test_perf.hpp" in the test directory.
+
+<ul>
+<li> If you can, compile with C++0x (with SCons, add the command line option std=2011). In this case, the performance module will have an accuracy down to the millisecond. Without C++0x, the timer accuracy is (only) about one second. </li>
+
+<li> Include "test/performance/performance_module/perf_timer.cxx" in the source code to be evaluated. </li>
+
+<li> Add TIMER("name_of_a_timer") where you want to start the timer. </li>
+
+<li> Using TIMER("name_of_a_timer") (again) will stop the timer. You can re-start him whenever you want, with the same command. </li>
+
+<li> PRINT_TIMER("name_of_a_timer") will display the time this timer has spent running. </li>
+
+<li> RESET_TIMER("name_of_a_timer") will reset the timer. </li>
+
+<li> RESET_ALL_TIMER will reset any timer you set. </li>
+
+<li> GET_TIMER("name_of_a_timer") will return a double corresponding to the elapsed time at this moment. </li>
+
+</ul>
+
+*/

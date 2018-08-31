@@ -1,0 +1,343 @@
+/*! \file level_set_observation_manager.dox
+    \brief Level-Set Observation Manager.
+*/
+
+/*!
+\page level_set_observation_manager Level-Set Observation Manager
+
+This observation manager defines a front level-set data observation operator. Mathematical definitions are detailed below. For more information, you can find three references at the end of the page.
+
+The class \link Verdandi::LevelSetObservationManager LevelSetObservationManager\endlink
+is implemented in <code>LevelSetObservationManager.hxx</code> and
+<code>LevelSetObservationManager.cxx</code>. It is a template class:
+ <code>LinearObservationManager<Model></code>. <code>Model</code> is
+ the model used with the observation manager.
+
+\section level_set_mathematical Mathematical definitions
+
+\subsection level_set_sub11 Data assimilation - observer
+
+We consider a target model defined by the following system
+<center>
+\f$
+\left\{ \begin{array}{rcl}
+\dot{u}(t) & = & A(u,  t), \; \mbox{in} \; \mathcal{B} \times (0, T), \\
+u(0) & = & u_{\diamond} + \zeta^u, \; \mbox{in} \; \mathcal{B}, \\
+\end{array}
+\right.
+\f$
+</center>
+with \f$u\f$ the state of the system, \f$A\f$ the dynamical operator, \f$u_{\diamond}\f$ the a priori on the initial condition and \f$\zeta^u\f$ the unknown part.<br>
+The data assimilation procedure consists in considering the following observer model
+<center>
+\f$
+\left\{ \begin{array}{rcl}
+\dot{\hat{u}}(t) & = & A(\hat{u}, t) + G_{u} \, \bigl( D(z_u,\hat{u}) \bigr), \\
+\hat{u}(0) & = & u_{\diamond}, \\
+\end{array}
+\right.
+\f$
+</center>
+with \f$D\f$ the discrepancy operator, \f$G_{u}\f$ the gain operator and \f$z_{u}\f$ the observations of the target model. We want to be able to prove that the observer model converges in a certain sense to the target model thanks to the correction added using observations.<br>
+In our case, we suppose that the dynamics of the system is such that it yields the propagation of a front \f$\Gamma\f$ in the domain \f$\mathcal{B}\f$ through time. Therefore we present a data assimilation procedure in which the observations are images of the front evolution.<br>
+We first need to define some geometric concepts, and recall that for an object occupying the region \f$\Omega^{in}\f$ \f$\subset\f$ \f$\mathcal{B}\f$ of boundary \f$\Gamma\f$ an admissible level set is a smooth function \f$\phi\f$ such that
+<center>
+\f$
+\phi > 0 \; \mbox{in} \; \Omega^{in} , \;  \phi < 0 \; \mbox{in} \; \mathcal{B} \backslash \overline{\Omega^{in}} \; \mbox{and} \;  \phi = 0 \; \mbox{on} \;  \Gamma.
+\f$
+</center>
+<br>
+We define the traveling front by
+<center>
+\f$
+\Gamma_{\hat{u}}(t) = \{\underline{x} \in \mathcal{B}, \phi_{\hat{u}} (\underline{x}, t) = 0 \}.
+\f$ 
+</center>
+<br>
+And the already traveled-through region by 
+<center>
+\f$
+\mathcal{B}_{\hat{u}}^{in} (t) = \{ \underline{x} \in \mathcal{B}, \phi_{\hat{u}} > 0 \}.
+\f$
+</center><br>
+In our case, we suppose that there exists a value \f$c_{th}\f$ called <b>threshold activation</b> value at which the solution changes states. It allows to define a particular level-set for our problem
+<center>
+\f$
+\phi_{\hat{u}} (\underline{x}, t) = \hat{u} - c_{th}.
+\f$
+</center>
+<br>
+We can now define the correction by the two following contributions
+<center>
+\f$
+  G_{u} \, \bigl( D(z_u,\hat{u}) \bigr) = - \lambda (\underline{\nabla}_{\mbox{sh}} E_{dt} + \mu \underline{\nabla}_{\mbox{top}} E_{dt}), (1)
+\f$
+</center>
+where \f$\lambda\f$ is the <b>nudging gain</b> and \f$\mu\f$ the <b>topological gradient coefficient</b>, both are <b>positive</b> constants.<br>
+The first term in (1) corresponds to the shape derivative term 
+<center>
+\f$
+  \underline{\nabla}_{\mbox{sh}} E_{dt} = \hat{\delta}(\Gamma_{\hat{u}},\underline{x})\alpha(\vert \underline{\nabla} \hat{u} \vert) d E_{dt}, (2)
+\f$
+</center>
+where \f$\hat{\delta}\f$ is the Dirac delta function of the multidimensional variable \f$\underline{x}\f$ and this distribution is non-zero only on the front \f$\Gamma\f$, \f$\alpha\f$ is a strictly positive function that is chosen as
+<center>
+\f$
+\alpha(\vert \underline{\nabla} \hat{u} \vert) = \frac{1}{\vert \underline{\nabla} \hat{u} \vert},
+\f$
+</center><br>
+<center>
+\f$
+  d E_{dt} (\mathcal{B}^{\mbox{in}}_{\hat{u}})(\underline{x}) = (z_u(\underline{x}) - C_1(\mathcal{B}^{\mbox{in}}_{\hat{u}}))^2 - (z_u(\underline{x}) - C_2( \mathcal{B}^{\mbox{in}}_{\hat{u}} ))^2,
+\f$
+</center><br>
+<center>
+\f$
+ \begin{array}{lcl} \displaystyle C_1(\mathcal{B}^{\mbox{in}}_{\hat{u}})  = \frac{1}{ \vert \mathcal{B}^{\mbox{in}}_{\hat{u}} \vert} \displaystyle \int_{\mathcal{B}^{\mbox{in}}_{\hat{u}}} z_{u}  \, d\underline{x}, & \displaystyle C_2(\mathcal{B}^{\mbox{in}}_{\hat{u}})  = \frac{1}{ \vert \mathcal{B} \setminus \overline{\mathcal{B}_{\hat{u}}^{\mbox{in}}} \vert} \displaystyle \int_{\mathcal{B} \setminus \overline{\mathcal{B}^{\mbox{in}}_{\hat{u}}}} z_{u}  \, d\underline{x}, \end{array}
+\f$
+</center><br>
+<center>
+\f$
+\begin{array}{lcl} \vert \mathcal{B}^{\mbox{in}}_{\hat{u}} \vert = \int_{\mathcal{B}^{\mbox{in}}_{\hat{u}}} d\underline{x}, & \vert \mathcal{B} \setminus \overline{\mathcal{B}^{\mbox{in}}_{\hat{u}}} \vert = \int_{\mathcal{B} \setminus \overline{\mathcal{B}^{\mbox{in}}_{\hat{u}}}} d\underline{x}. \end{array}
+\f$
+</center><br>
+We simplify the first term in (2) knowing that \f$\vert \underline{\nabla} \phi_{\hat{u}} \vert = \vert \underline{\nabla} \hat{u} \vert\f$ with our choice of level-set and that by definition of \f$\hat{\delta}\f$ we have \f$\hat{\delta}(\Gamma) = \delta(\phi) \vert \underline{\nabla} \phi \vert\f$ with \f$\delta\f$ the Dirac delta function in one spatial dimension
+<center>
+\f$
+\hat{\delta}(\Gamma_{\hat{u}},\underline{x})\alpha(\vert \underline{\nabla} \hat{u} \vert) = \delta(\phi_{\hat{u}}) \vert \underline{\nabla} \phi_{\hat{u}} \vert \frac{1}{\vert \underline{\nabla} \hat{u} \vert} = \delta(\phi_{\hat{u}}).
+\f$
+</center>
+The term second in (1) is the topological gradient term 
+<center>
+\f$
+  \underline{\nabla}_{\mbox{top}} E_{dt} = \biggl(1+\mbox{sign}\Bigl(d E_{dt} \times (\hat{u} - c_{th}) \Bigr) \biggr) d E_{dt}.
+\f$
+</center>
+
+\subsection level_set_sub12 Numerical methods
+
+We define a discretization of the Dirac function \f$\delta\f$ and we first present a version for a 1D simulation<br>
+<center>
+\f$
+\delta(x) \simeq \delta_{\epsilon}(x) = \left\{ \begin{array}{lcl} \frac{1}{\epsilon}\psi(\frac{x}{\epsilon}) & \mbox{if} \; \vert x \vert \leq \epsilon, \\
+0 & \mbox{if} \; \vert x \vert > \epsilon, 
+\end{array},
+\right.
+\f$
+</center> <br>
+<center>
+\f$
+\psi(x) = \frac{1}{2}(1 + \cos(\pi x)).
+\f$ </center><br>
+In 2D-3D, we use a better approximation for \f$\delta\f$ <br>
+<center>\f$
+\delta(\phi_{\hat{u}}) \simeq \delta_{\epsilon_{0} \vert \underline{\nabla} \phi_{\hat{u}} \vert_{1}}(\phi_{\hat{u}}) \vert \underline{\nabla} \phi_{\hat{u}} \vert_{2},
+\f$
+</center>
+with
+<center>
+\f$
+\delta_{\rho}(x) = \frac{1}{\sqrt{\pi}} \frac{\rho}{{\rho}^2 + x^2}.
+\f$
+</center>
+
+\subsection level_set_sub13 Prediction-correction scheme
+
+We present a typical prediction-correction scheme that can be used with the observer <br>
+<center>
+\f$
+\left \{
+  \begin{array}{ccll}
+\displaystyle \frac{\hat{U}_{n+1}^- - \hat{U}_{n}^+}{\Delta t} & = & A_{n+1 \vert n} \hat{U}_{n+1}^- + F^{n+1}, & \mbox{prediction step}, \\ \noalign{\vspace{10pt}} 
+\displaystyle \frac{\hat{U}_{n+1}^+ - \hat{U}_{n+1}^-}{\Delta t} & = & - \lambda \delta_{\epsilon}(\hat{\Phi}_{n+1})[(Z_{n+1}^u - C_{1}(\hat{\Phi}_{n+1}, Z_{n+1}^u))^2 - (Z_{n+1}^u - C_{2}(\hat{\Phi}_{n+1}, Z_{n+1}^u))^2], & \mbox{correction step}, \\ \noalign{\vspace{10pt}} 
+\end{array}
+\right. 
+\f$ </center><br>
+where we recall the Heaviside function
+<center>\f$
+H(\phi) = \left \{
+ \begin{array}{lc}
+0 & \mbox{if} \; \phi < 0, \\ \noalign{\vspace{5pt}}
+1 & \mbox{if} \; \phi > 0, \\ \noalign{\vspace{5pt}}
+\frac{1}{2} & \mbox{if} \; \phi = 0,
+\end{array}
+\right.
+\f$</center>
+with \f$Z_{n+1}^u\f$ the discrete observation, \f$\hat{\Phi}_{n+1}\f$ the discrete level-set, <br>
+<center>
+\f$
+\begin{array}{l}\\
+\hat{\Phi}_{n+1} =  \hat{U}_{n+1}^- - c_{th}, \\  \noalign{\vspace{10pt}}
+C_{1}(\hat{\Phi}_{n+1}, Z_{n+1}^u) = \frac{H(\hat{\Phi}_{n+1})^T Z_{n+1}^u}{H(\hat{\Phi}_{n+1})^T H(\hat{\Phi}_{n+1})}, \\ \noalign{\vspace{10pt}}
+C_{2}(\hat{\Phi}_{n+1}, Z_{n+1}^u) = \frac{(1 - H(\hat{\Phi}_{n+1}))^T Z_{n+1}^u}{(1 - H(\hat{\Phi}_{n+1}))^T (1 - H(\hat{\Phi}_{n+1}))}. \\ \noalign{\vspace{10pt}}
+\end{array}
+\f$
+</center><br>
+
+\section level_set_verdandi_use Implementation in Verdandi
+
+A simulation with the observation manager may be carried out with the following C++ lines
+\precode
+Nudging<Model, LevelSetObservationManager<Model>> driver;
+
+driver.Initialize(argv[1]);
+            
+while (!driver.HasFinished())
+{
+        driver.InitializeStep();
+        driver.Forward();
+        driver.FinalizeStep();
+}
+
+driver.Finalize();
+\endprecode
+In <b>observation.lua</b>, add the following lines to the <code>observation = { ... }</code> part
+\precode
+level_set_observation_manager = {
+       
+       -- Threshold activation for the front.
+       threshold_activation = 0.5,
+       -- Is the problem in 1D.
+       case_in_1D = false,
+       -- Radius stimulation in 1D
+       stimulation_radius_1D = 0.4,
+       -- Delta_x in 1D.
+       delta_x_1D = 0.01,
+       -- Epsilon for Dirac approximation.
+       epsilon = 0.01,
+       -- With topological gradient.
+       with_topological_gradient = true,
+       -- Topological gradient coefficient.
+       topological_gradient_coeff = 3.,
+	   -- Do interpolate observations.
+       interpolate_observations = false
+},
+\endprecode
+In <b>assimliation.lua</b>, add the following lines 
+\precode
+nudging = {
+    
+    data_assimilation = {
+        
+        analyze_first_step = false,
+        -- Choice of nudging : "dt", "standard", "source"
+        nudging_type = "dt",
+        -- Choice of nudging gain.
+        nudging_gain = 0.5,
+        matrix_fixed = false,
+        
+    },
+    
+    ...
+}
+\endprecode
+We recall that the <b>nudging\_gain</b> must be positive. We also point out that with the option <b>dt</b>, one cannot analyze at the first step. If one wants an analysis at the first step, one should use the option <b>standard</b> and \f$\tilde{\lambda} = \Delta t \lambda\f$.<br>
+An example of the algorithm has been implemented. It can be used for simulations on a Cartesian grid with a constant space discretization, which requires to define the macro <code>#define CARTESIAN_GRID</code>
+If not, you need to implement other methods into your model such as
+\precode
+std::array<double,2> GetMeanValues(const state& observation_vector,
+	                               const double threshold_activation);
+  
+void ComputeDirectCorrection(state& innovation,
+	                         const state& observation_vector,
+	                         const state& level_set,
+	                         const double epsilon,
+	                         const double c1,
+	                         const double c2,
+	                         const double topological_gradient_coeff,
+	                         const bool has_topological_gradient,
+							 const bool case_in_1D);
+\endprecode
+For example, with a finite element methods, the method <code>ComputeDirectCorretion</code> corresponds to
+\f$
+- \int_{\mathcal{B}} (\underline{\nabla}_{\mbox{sh}} E_{dt} + \mu \underline{\nabla}_{\mbox{top}} E_{dt}) \psi dB,
+\f$
+with \f$\psi\f$ a test function.
+
+\section level_set_observations Management of the observations
+
+\subsection level_set_sub31 Generate observations in Verdandi
+
+Generation of observations on your own model may be carried out with the following C++ lines
+\precode
+ObservationGenerator<Model, LevelSetObservationManager<Model>> driver;
+
+driver.Initialize(argv[1]);
+            
+while (!driver.HasFinished())
+{
+        driver.InitializeStep();
+        driver.Forward();
+        driver.FinalizeStep();
+}
+
+driver.Finalize();
+\endprecode
+In the <b>truth.lua</b> file, add the following lines
+\precode
+observation.option.with_observation = false
+
+-- Forward simulation.
+forward = {
+   display = {
+      iteration = true,
+      time = true
+   },
+   output_saver = {
+      variable_list = {"forecast_time", "forecast_state"},
+      file = output_directory .. "truth-%{name}.%{extension}",
+      mode = output_mode,
+      mode_scalar = output_mode_scalar
+   },
+   output = {
+      configuration = output_directory .. "truth.lua",
+      log = output_directory .. "truth.log"
+   }
+}
+observation_generator = forward
+observation_generator.output_saver.variable_list
+= {"observation_time", "observation", "forecast_state"}
+\endprecode
+This driver advances the model in time and creates the binary or text file <b>truth-observation.(bin/dat)</b>. At each time step, an observation vector is computed and added to the file. This vector and the state have the same size and are computed in the following method
+\precode
+void LevelSetObservationManager::ApplyOperator(const state& x, observation& y) const
+\endprecode
+In the traveled-through region, the vector is equal to 1, 0 on the front and -1 in the rest of the domain.
+To avoid consistency errors, we can generate in 1D a better observation of the model as explained in the thesis in reference below. This algorithm is used if <b>case\_in\_1D</b> is set to <b>true</b>. The user will also need to define the <b>stimulation\_radius\_1D</b> and <b>delta\_x\_1D</b>. The first variable is the radius of the region you stimulate at the beginning of the simulation, and the second is the smallest space-step used to discretize in 1D.
+
+\subsection level_set_sub32 Use your own observations
+
+It is possible to use observations that are not generated directly by Verdandi, as it has been explained before by giving a binary or text file that satisfies these rules:
+<ul>
+<li> Each line corresponds to the observation at one time step.</li>
+<li> Each line has the size of the state.</li>
+<li> 1 on the traveled-through region.</li>
+<li> 0 on the front.</li>
+<li> -1 on the rest of the domain.</li>
+</ul>
+When observations are not available at each time step, the variable <code>Nskip</code> can be used to skip a number of time steps (for a constant time step). Otherwise, a file containing a column vector of all times at which observations are available can also be provided.
+
+\subsection level_set_sub33 Interpolation of observations
+
+If the user does not have observations at each time step, it can be interesting to interpolate the observations that are available around the current time. The <b>observation\_aggregator</b> implemented in Verdandi cannot be used with this observation manager, but an interpolation better suited for this problem has been implemented. To do so, <b>interpolate\_observations</b> must be set to <b>true</b> and the correction term becomes<br>
+<center>
+\f$
+G_{n} = \alpha_{n} G_{i} + (1 - \alpha_{n}) G_{i+1},
+\f$
+</center>
+with<br>
+<center>
+\f$
+\alpha_{n} = \frac{t_{j+1} - t_{n}}{t_{j+1} - t_{j}},
+\f$
+</center> <br>
+where \f$\{t_j, t_{j+1}\}\f$ are the data sampling times adjacent to the simulation time \f$t_n\f$.
+
+\section level_set_ref References
+
+For more details, about the observation manager see<br>
+ <a href="https://hal.inria.fr/hal-01111675/file/RDEstimPaper-resubmission.pdf" style="color:black">A Luenberger observer for reaction-diffusion models with front position data (A. Collin, D. Chapelle and P. Moireau)</a>.<br>
+<a href="https://hal.inria.fr/hal-01174916/file/ElectrophysioObserver-v1.pdf" style="color:black">Sequential State Estimation for Electrophysiology Models with Front Level-Set Data Using Topological Gradient Derivations (A. Collin, D. Chapelle and P. Moireau)</a>.<br>
+<a href="https://tel.archives-ouvertes.fr/tel-01075052" style="color:black">Asymptotic analysis in cardiac electrophysiology.  Applications in modeling and in data assimilation (A. Collin, Thesis)</a>.
+
+*/
