@@ -209,21 +209,21 @@ namespace Verdandi
 
         /*** Methods ***/
 
-        void Initialize(string configuration_file,
+        virtual void Initialize(string configuration_file,
                         bool initialize_model = true,
                         bool initialize_observation_manager = true);
-        void Initialize(VerdandiOps& configuration,
+        virtual void Initialize(VerdandiOps& configuration,
                         bool initialize_model = true,
                         bool initialize_observation_manager = true);
 
         void InitializeStep();
 
         void Forward();
-        void Analyze();
-        void Prediction();
+        virtual void Analyze();
+        virtual void Prediction();
 
-        void FinalizeStep();
-        void Finalize();
+        virtual void FinalizeStep();
+        virtual void Finalize();
 
         bool HasFinished();
 

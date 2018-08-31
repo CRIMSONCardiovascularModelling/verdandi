@@ -30,6 +30,9 @@
 
 #include "seldon/computation/solver/SparseCholeskyFactorisation.cxx"
 
+#include "seldon/matrix/PetscMatrixInline.cxx"
+#include "seldon/matrix/PetscMatrix.cxx"
+
 
 namespace Verdandi
 {
@@ -436,6 +439,12 @@ namespace Verdandi
     void ReducedOrderUnscentedKalmanFilter<Model, ObservationManager>
     ::Prediction()
     {
+        ///////////////////////////////////
+        // Someting in here is broken (apparently natively as part of verdandi 1.7),
+        // so I've commented it all out since we always override it anyway in
+        // CRIMSON's ROUKF_modified.cxx
+        // CA 16/8/2018
+        ///////////////////////////////////
         MessageHandler::Send(*this, "all", "::Forward begin");
 
         if (sigma_point_type_ == "simplex")
@@ -550,7 +559,8 @@ namespace Verdandi
 
             /*** Sampling ***/
 
-            model_state_error_variance tmp_L, Ch;
+            model_state_error_variance tmp_L;
+            model_state_error_variance_reduced Ch;
             Ch.Copy(U_inv_);
             GetCholesky(Ch);
 

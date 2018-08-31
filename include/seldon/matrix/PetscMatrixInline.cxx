@@ -284,7 +284,7 @@ namespace Seldon
   */
   template <class T, class Prop, class Storage, class Allocator>
   inline void PetscMatrix<T, Prop, Storage, Allocator>
-  ::SetBuffer(int i, int j, T value, InsertMode insert_mode = INSERT_VALUES)
+  ::SetBuffer(int i, int j, T value, InsertMode insert_mode)
   {
     int ierr;
     ierr = MatSetValues(petsc_matrix_, 1, &i, 1,
