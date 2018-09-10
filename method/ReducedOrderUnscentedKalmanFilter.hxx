@@ -72,13 +72,13 @@ namespace Verdandi
         typedef typename ObservationManager::observation
         observation;
         //! Type of the sigma point vector.
-        typedef Vector<Ts, VectFull, MallocAlloc<Ts> > sigma_point;
+        typedef Vector<Ts, VectFull, CallocAlloc<Ts> > sigma_point;
         //! Type of the state vector collection.
         typedef Vector<model_state, Collection> state_collection;
         //! Type of the observation vector collection.
         typedef Vector<observation, Collection> observation_collection;
         //! Type of the sigma point matrix.
-        typedef Matrix<Ts, General, RowMajor, MallocAlloc<Ts> >
+        typedef Matrix<Ts, General, RowMajor, CallocAlloc<Ts> >
         sigma_point_matrix;
         /*! \brief Type of the reduced matrix \f$U\f$ in the \f$LUL^T\f$
           decomposition of the background error covariance matrix. */
@@ -220,7 +220,6 @@ namespace Verdandi
 
         void Forward();
         virtual void Analyze();
-        virtual void Prediction();
 
         virtual void FinalizeStep();
         virtual void Finalize();
@@ -234,6 +233,9 @@ namespace Verdandi
 
         string GetName() const;
         void Message(string message);
+
+    protected:
+        virtual void Prediction();
     };
 
 

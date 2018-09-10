@@ -20,7 +20,9 @@
 
 #ifndef SELDON_FILE_ALLOCATOR_INLINE_CXX
 
+#include "malloc.h"
 #include "Allocator.hxx"
+#include <stdexcept>
 
 namespace Seldon
 {
@@ -86,7 +88,62 @@ namespace Seldon
   template <class T>
   inline void* CallocAlloc<T>::reallocate(pointer data, int num, void* h)
   {
-    return realloc(reinterpret_cast<void*>(data), num * sizeof(T));
+    void* data_pointer_cast_void = reinterpret_cast<void*>(data);
+
+    // For CallocAlloc, the code requires that the allocated memory is initialised.
+    //
+    // This requires some work, as realloc doesn't know how to initialise
+    // any new memory it allocates (which is required here if the new array length
+    // is longer than the old).
+    //
+    // The current fix for this won't be portable (possibly GNU Linux only), but 
+    // hopefully we'll always be compiling on GNU Linux...
+    //
+    // Anyway, it's preferable to the previous status quo of using
+    // uninitialised memory. 
+    //
+    // There's hundreds of calls to reallocate() throught this library;
+    // the correct fix would be to go through them and initialise the
+    // memory properly in each case, but that will take a long time.
+    // So unfortunately, this sub-optimal, probably-unstable fix
+    // is all I can do for now.
+    //
+    // To quote the man page:
+    //
+    // "The value returned by malloc_usable_size() may be greater than the
+    // requested size of the allocation because of alignment and minimum size
+    // constraints. Although the excess bytes can be overwritten by the
+    // application without ill effects, this is not good programming practice:
+    // the number of excess bytes in an allocation depends on the underlying
+    // implementation."
+    //
+    // So this usage is OK (on GNU), but not a great solution.
+    // Unfortunately, I haven't found a better one beyond redesigning all
+    // calls to reallocate() in the library.
+    const size_t old_array_size = malloc_usable_size(data_pointer_cast_void);
+
+    const size_t new_array_size = num * sizeof(T);
+    void* reallocated_array = realloc(reinterpret_cast<void*>(data_pointer_cast_void), new_array_size);
+
+    if (!reallocated_array) {
+      throw std::runtime_error("Failed to reallocate Seldon array in AllocatiorInline.cxx.");
+    }
+
+    // Pointer arithmetic on void* is not defined by the standard,
+    // but it is a GNU extension, see 
+    // 
+    // https://gcc.gnu.org/onlinedocs/gcc-4.4.2/gcc/Pointer-Arith.html#Pointer-Arith
+    //
+    // So in GNU C, sizeof(void) = 1 (byte).
+    // So can increment the pointer a byte at a time...
+    if (new_array_size > old_array_size) {
+      void* start_of_newly_allocated_array_region = reallocated_array + old_array_size;
+
+      const size_t length_of_newly_allocated_part_of_array = new_array_size - old_array_size;
+      memset(start_of_newly_allocated_array_region, 0, length_of_newly_allocated_part_of_array);
+    }
+
+    return reallocated_array;
   }
 
   template <class T>
