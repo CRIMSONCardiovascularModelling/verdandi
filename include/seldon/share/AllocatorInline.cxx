@@ -140,6 +140,9 @@ namespace Seldon
     //
     // So in GNU C, sizeof(void) = 1 (byte).
     // So can increment the pointer a byte at a time...
+    #ifndef __GNUC__
+    #error void pointer arithmetic may not be available outside of GNU C. Investigate alternatives for your compiler.
+    #endif
     if (new_array_size > old_array_size) {
       void* start_of_newly_allocated_array_region = reallocated_array + old_array_size;
 
