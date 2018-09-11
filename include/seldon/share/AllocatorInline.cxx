@@ -120,6 +120,10 @@ namespace Seldon
     // So this usage is OK (on GNU), but not a great solution.
     // Unfortunately, I haven't found a better one beyond redesigning all
     // calls to reallocate() in the library.
+
+    #ifndef __GNUC__
+    #error malloc_usable_size() may not be available outside GNU C. Find an alternative for your compiler.
+    #endif
     const size_t old_array_size = malloc_usable_size(data_pointer_cast_void);
 
     const size_t new_array_size = num * sizeof(T);
