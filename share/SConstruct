@@ -22,12 +22,27 @@
 # For more information, visit the Verdandi web site:
 #      http://verdandi.gforge.inria.fr/
 
+"""
+NOTE: this build script will only ever work in Python 2 because it relies on now depreciated
+behavior of Python 2 exec affecting local variables. See functions create_variable and to_string_list
+"""
+
+from __future__ import print_function
 
 import os, sys, glob
 import distutils.sysconfig
 
+majorPythonVersionNumber = sys.version_info[0]
+
+if(sys.version_info[0] != 2):
+    print("This build script requires Python 2.X and cannot run on Python 3 (tested on Python 2.7.17).")
+    sys.exit(1)
+
 # Main environment variables.
 env = Environment(ENV = os.environ)
+
+print("Working directory is ", os.getcwd())
+print("env['PLATFORM'] is ", env['PLATFORM'])
 
 
 ####################
@@ -51,9 +66,14 @@ def create_variable(input_name, default):
 # Returns the input as a list of strings, if the input is a list of strings, a
 # string, None, or if the input can be converted to string. The input must be
 # provided as a string containing its name.
+# Note that input_name is the name of a global variable, 
+# hopefully defined with create_variable.
 def to_string_list(input_name):
     exec("global " + input_name)
     try:
+        # Detect if this global variable is defined.
+        # NOTE that this won't work in Python 3!
+        # https://stackoverflow.com/questions/1463306/how-does-exec-work-with-locals/1463370#1463370
         exec("local_copy = " + input_name)
     except:
         return []
@@ -65,8 +85,9 @@ def to_string_list(input_name):
         return Split(str(local_copy))
 
 
-# This function checks whether a supported argument has been provided, and it
-# sets the argument to its default value if the user has not given any value.
+# This function checks whether a supported argument (passed through the scons command) 
+# has been provided, and it sets the argument to its default value if the user has 
+# not given any value.
 def add_argument(name, value_list = None):
     if value_list is None:
         if not ARGUMENTS.has_key(name):
@@ -321,11 +342,19 @@ if ARGUMENTS["lib"] == "yes":
     conf.CheckLib("verdandi")
     conf.CheckLib("seldon")
 
-# Link to the appropriate version of Python.
+# Link / set include file directory for the appropriate version of Python.
 python_version = distutils.sysconfig.get_python_version()
+print("Using python version ",python_version)
 if conf.CheckLib("python" + python_version):
     env.Append(LINKFLAGS = "-l" + "python" + python_version)
     env.Append(CXXFLAGS = ["-DVERDANDI_PYTHON_VERSION=" + python_version])
+    
+    # On Ubuntu 18.04, Python 2 development headers don't get put in /usr/include/.
+    # This concatentation with /usr/include/python isn't great, won't support Windows or 
+    # custom compiles / installs of python2 (which would be in /usr/local/include)
+    pythion_include_path = '/usr/include/python' + python_version
+    print('Using', pythion_include_path, 'as python development headers include path')
+    env.Append(CPPPATH = pythion_include_path) #Append the version specific python include directory, e.g., /usr/include/python2.7
 
 if ARGUMENTS["line"] == "no":
     env.Replace(CXXCOMSTR = "[C++] $SOURCE")
@@ -385,13 +414,24 @@ if env_lua['PLATFORM'] != 'win32':
         env_lua.Append(CFLAGS = "-fPIC") # for SWIG.
 
 # The default targets are all ".cpp" files, but targets can be excluded.
+# This (Python, not scons) function finds all .cpp files in the current working directory.
+# Note that SConstruct files in other directories execute this script in their own directory.
+# That means that every SConstruct file globs every cpp file. 
+# Literally only .cpp files, not .cxx or .txx!
 target_list = glob.glob("*.cpp")
+
+# Note that SConstruct files in other directories set this variable before running this script
 exclude_target = to_string_list("exclude_target")
 for filename in target_list[:]:
     if filename in exclude_target or filename[:-4] in exclude_target:
         target_list.remove(filename)
 for filename in target_list:
+    # strip out the last 4 chars of the source file name and use that as the program name, 
+    # e.g., have somefile.cpp compile into a program named 'somefile'
+    # I'd recommend using the builtin python functions for this instead.
+    # Why not use https://docs.python.org/2.7/library/os.path.html#os.path.splitext ?
     if env['PLATFORM'] in ['win32', 'win64']:
+        #           "somefile"      ["somefile.cpp"] + [dependency1.cpp, dependency2.cpp]
         env.Program(filename[:-4], [filename] + dependency_list)
     else:
         env.Program(filename[:-4], [filename, lua_library] + dependency_list)
