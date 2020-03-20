@@ -1,0 +1,37 @@
+### Binaries
+example/*/*
+!example/*/*.*
+*.o
+*.a
+*.so
+*.os
+*.py[cod]
+
+### SCons
+*.scon*
+config.log
+*.cc
+python/verdandi.py
+
+### Computation results
+*.bin
+*.dat
+*.log
+
+### Documentation
+doc/html
+doc/latex/
+
+### Emacs files
+*~
+\#*\#
+.\#*
+
+### Packages
+*.gz
+*.bz2
+*.tar
+*.zip
+
+### Miscellaneous
+include/

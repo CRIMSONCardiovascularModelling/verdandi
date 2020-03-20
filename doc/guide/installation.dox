@@ -1,0 +1,202 @@
+/*! \file installation.dox
+    \brief Installation of Verdandi.
+*/
+
+/*!
+\page installation Installation
+
+%Verdandi is supposed to be fully compliant with the <b>C++ standard</b>. This ensures portability on many platforms. It compiles at least on \ref linux, \ref macos and \ref windows. It is compatible with IDEs such as Xcode and Microsoft Visual Studio (tested on Visual C++ 2010).
+
+\section dependencies Dependencies
+%Verdandi requires:
+<ul>
+  <li> the software construction tool <a href="http://www.scons.org/">SCons</a> (version 1.0 or higher) for compilation; </li>
+  <li> Python for both SCons and the optional Python interface (see page \ref python) to the C++ code; the generation of the interface also requires <a href="http://www.swig.org/">SWIG</a>. </li>
+</ul>
+
+%Verdandi may require other dependencies:
+<ul>
+        <li> The Fortran libraries <a href="http://www.netlib.org/blas/">Blas</a> and <a href="http://www.netlib.org/lapack/">Lapack</a> for linear algebra. </li>
+        <li> The <a href="http://www.robertnz.net/nr02doc.htm">Newran</a> library for random number generation. </li>
+        <li> The <a href="http://ab-initio.mit.edu/wiki/index.php/NLopt">NLopt</a> library as optimization solver. </li>
+</ul>
+
+Note that in %Verdandi tarball, you will also find:
+<ul>
+  <li> the linear algebra library <a href="http://seldon.sourceforge.net/">Seldon</a>. </li>
+  <li> <a href="http://www.lua.org">Lua</a>, a scripting language. </li>
+  <li> Ops, a library for reading Lua configuration files. </li>
+</ul>
+
+\section linux Linux
+
+\subsection installation_linux Installation
+
+Download the source code (<a href="http://verdandi.gforge.inria.fr/">Verdandi homepage</a>), usually available in a compressed file, e.g., verdandi-[version].tar.bz2. Uncompress the file, e.g., in command line: <code>tar -xvjf verdandi-[version].tar.bz2</code>. This will create the directory <code>verdandi-[version]/</code> in which you will find %Verdandi.
+
+\subsection installation_dependencies Installation of dependencies
+
+Installations with APT (Advanced Package Tool from Debian and Ubuntu):
+<ul>
+        <li> Blas and Lapack (highly recommended) can be installed using the command-line:
+        \precode
+        $ sudo apt-get install libblas-dev liblapack-dev
+        \endprecode
+        </li>
+        <li> If you want to use the Python interface, install the following packages:
+        \precode
+        $ sudo apt-get install python-dev python-numpy swig
+        \endprecode
+        </li>
+</ul>
+Manuals installations:
+<ul>
+        <li> If you want to use NLopt (for example in the clamped bar example), you will need to dowload and install it:
+        \precode
+        $ wget http://ab-initio.mit.edu/nlopt/nlopt-2.4.1.tar.gz
+        $ tar xvzf nlopt-2.4.1.tar.gz
+        $ cd nlopt-2.4.1
+        $ ./configure
+        $ make
+        $ sudo make install
+        \endprecode
+        </li>
+        <li> If you want to use Newran (for example in the shallow water model), you will need to download and install it:
+        \precode
+        $ wget http://www.robertnz.net/ftp/newran03.tar.gz
+        $ tar zxvf newran03.tar.gz
+        \endprecode
+        If everything is fine, you should have a file called include/newran/newran.h. Next, you have to edit include/newran/include.h in order to uncomment the line:
+        \precode
+        //#define use_namespace
+        \endprecode
+        Then you can compile the library using:
+        \precode
+        $ make -f nr_gnu.mak libnewran.a
+        \endprecode
+        </li>
+</ul>
+
+\subsection tests_linux Testing the installation
+
+In order to start with %Verdandi, it is sufficient to install SCons. Make sure that the executable <code>scons</code> is available.
+
+To compile one of the examples provided with %Verdandi, run <code>scons</code> in the directory <code>example/quadratic_model/</code>:
+
+\precode
+$ scons
+\endprecode
+
+Then to run the quadratic model example, execute the following commands:
+\precode
+$ forward configuration/truth.lua [1.]
+$ optimal_interpolation configuration/assimilation.lua [2.]
+\endprecode
+
+This should generate results in the form of .bin files found in the directory <code>example/quadratic_model/result/</code>.
+
+\comment
+        <li>This program generates the observations by running the model with the true initial conditions described in <code>truth.lua</code>, without any error. It performs steps forward with the quadratic model without data assimilation.</li>
+        <li>This program applies the optimal interpolation, starting from erroneous initial conditions described in <code>assimilation.lua</code>. The observations are those generated above by <code>forward</code>.</li>
+\endcomment
+
+
+\subsection library_linux Compile Verdandi as a library
+
+Verdandi can be compiled as a library. In order to do so, you need to compile Seldon and Ops as libraries.
+To compile Seldon, you need to go in the Seldon directory, and then use the commands:
+\precode
+        cd lib
+        scons lib=yes libseldon.a
+\endprecode
+Ops can be compiled using this command in the root directory of Ops:
+\precode
+        scons lib=yes libops.a
+\endprecode
+If you include "share/SConstruct" from Verdandi, you can compile Verdandi with:
+\precode
+        scons lib=compile libverdandi.a
+\endprecode
+Now, you can compile using Verdandi as a library using:
+\precode
+        scons lib=yes
+\endprecode
+
+
+\section macos MacOS
+
+\subsection installation_macos Installation
+
+Installation instructions for MacOS and Linux are nearly identical, except for a slight difference about the location of the directory where you have to put the files.
+
+\subsection Xcodeproject Create a Verdandi Xcode project
+
+<ul>
+<li> Download %Verdandi and expand it to the directory of your choice (<code>MY_VERDANDI_PATH</code>). </li>
+
+<li> Create a %Verdandi project within Xcode ("File -> New Project"). In "Xcode/New Project", select "Other/External Build System". Choose a name (<code>verdandi</code>) and select the path to the source directory (<code>MY_VERDANDI_PATH</code>).
+    In "Groups & Files", right click project name (<code>verdandi</code>), then choose "Add -> Existing Files..." and add recursively the %Verdandi project directories.
+ </li>
+ <li> <b>Compiling under Xcode</b>: <br>
+
+    1. In "Groups and Files -> Targets", right click "Targets" then select "Add -> New Target...", choose "other/External Target" and choose a name (for instance, <code>forward</code>).
+
+    2. In "Groups and Files -> Targets", double click the target that was created (<code>forward</code>).
+
+    3. In the "Build Tool" field, put the full path to scons (for example, "/usr/local/bin/scons").
+
+    4. Set the "Directory" field to the directory that contains the SConstruct file (for example, <code>MY_VERDANDI_PATH/example/clamped_bar/</code>).
+
+    5. In "Build Settings", specify the architectures to which the binary is targeted (for instance, "ARCHS = x86_64").
+
+    6. You should now be able to build using the "Build" command from Xcode.
+
+    7. Right click "Executables", choose "Add new custom executable...", make it point to the executable you are building, define the arguments ("configuration/truth.lua") and then you can debug using Xcode.
+
+</ul>
+
+
+\section windows_install Windows
+
+\subsection depinstall Installation of the dependencies
+<li> <b>Download precompiled libraries</b> <br>
+Not all the libraries are needed for all the methods, select and install the ones you will want to use.
+
+- Lua (always required). On <a href="https://code.google.com/p/luaforwindows/">this website</a>, download the latest executable for version 5.1 which will install Lua on your computer. Alternatively, you may want to compile Lua yourself: in this case, you will need to install make and to compile the library which can be found in "verdandi/include/lua" inside Verdandi tarball.
+
+- Blas and Lapack (highly recommended):<ul><li> On <a href="http://icl.cs.utk.edu/lapack-for-windows/clapack/#libraries">this webpage</a>, download the prebuilt librairies and extract the archive to some directory.</li>
+<li> Add the path to this directory to the environment variable "path": "Computer" -> "Properties" -> "Advanced System Properties" -> "Environment variables".</li></ul>
+
+- Atlas and Cblas (highly recommended): On <a href="http://www.netlib.org/atlas/archives/windows/">this webpage</a> download the file <code>atlas330_WinNT_P4SSE2.zip</code>. Extract the archive to a directory.
+
+</li>
+
+\subsection VSproject Creation of a Visual Studio project (tested with Visual Studio 9 2008)
+<ul>
+<li> Download and expand the Verdandi tarball.</li>
+<li> Create a new Visual Studio project from existing code: "File" -> "New" -> "Project From Existing Code".</li>
+<li> Select "Visual C++" in the drop-down menu then click "next".</li>
+<li> Set the project file location (for example "example/quadratic_model"), and give a name to the project, then click "next".</li>
+<li> In the drop-down menu select "Console application project" then click "finish".</li>
+</ul>
+
+\subsection VSdependencies Setting the dependencies in the Visual Studio project
+<ul>
+<li> In "Project" -> "Properties" -> "Configuration Properties" -> "Additional Include Directories" add "../../", "../../include" and the path to the headers of your Lua installation.</li>
+<li> Still in "Configuration Properties" go to "linker" -> "General" in the menu on the left. Add the paths to lua, cblas and Blas/Lapack into "Additional Librairies Directories".</li>
+<li> Under "linker" in the "Input File" menu, add the librairies to the "Additional Dependencies" menu. (At this time the names are "cbia.lib.blas.dyn.rel.x86.12.lib", "cbia.lib.lapack.dyn.rel.x86.12.lib", "cblas.a", "lua51.lib")</li>
+</ul>
+
+\subsection buildnrun Building the project and running a test - Quadratic model example.
+<ul>
+<li> The first step is to select the "forward.cpp" file in the project file list. To do so, one can right click on all other .cpp file and "exclude from project".</li>
+<li> To run the project using Visual Studio, you need to define an output directory and a command line argument. The argument for "forward.cpp" is the path to the "configuration/truth.lua" in the quadratic example directory.</li>
+<li> At this point you can build the project using the build command of Visual Studio then run it.</li>
+<li> Forward will generate a set of observations which can be used in an assimilation method.</li>
+<li> Include the nudging "file.cpp" in the project, and exclude the "forward.cpp".</li>
+<li> The command line argument must now be set to "configuration\assimilation.lua". </li>
+<li> Rebuild and run this new build.</li>
+</ul>
+
+
+*/
