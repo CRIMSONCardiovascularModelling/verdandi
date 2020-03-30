@@ -1,6 +1,6 @@
 ### Binaries
-example/*/*
-!example/*/*.*
+#example/*/*
+#!example/*/*.*
 *.o
 *.a
 *.so

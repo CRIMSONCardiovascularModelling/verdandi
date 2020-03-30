@@ -1,0 +1,8 @@
+import os, glob
+
+# Path where "Seldon.hxx" may be found.
+seldon_path = ".."
+
+exclude_target = glob.glob("*.cpp")
+
+execfile(os.path.join(seldon_path, "share/SConstruct"))
