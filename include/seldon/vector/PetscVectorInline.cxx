@@ -729,7 +729,7 @@ namespace Seldon
     ierr = VecCreateMPI(this->mpi_communicator_, local_size, i,
                         &this->petsc_vector_);
     CHKERRABORT(this->mpi_communicator_, ierr);
-    Fill(T(0));
+    this->Fill(T(0));
     this->Flush();
     this->petsc_vector_deallocated_ = false;
   }

@@ -88,7 +88,7 @@ namespace Seldon
     reference operator[] (int i);
     const_reference operator[] (int i) const;
     void Set(int, int, T);
-    void SetBuffer(int, int, T, InsertMode);
+    void SetBuffer(int, int, T, InsertMode = INSERT_VALUES);
     void Flush() const;
     void GetProcessorRowRange(int& i, int& j) const;
     void Copy(const Mat& A);

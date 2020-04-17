@@ -1871,6 +1871,13 @@ namespace Seldon
       }
   }
 
+  //! B = A. added by CA
+  template<class T, class Prop, class Allocator>
+  void CopyMatrix(const Matrix<T, Prop, PETScMPIDense, Allocator>& A,
+		  Matrix<T, Prop, PETScMPIDense, Allocator>& B)
+  {
+    B = A;
+  }
 
   //! B = A.
   template<class T, class Prop, class Allocator>

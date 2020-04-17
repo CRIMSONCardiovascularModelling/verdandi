@@ -30,6 +30,9 @@
 
 #include "seldon/computation/solver/SparseCholeskyFactorisation.cxx"
 
+#include "seldon/matrix/PetscMatrixInline.cxx"
+#include "seldon/matrix/PetscMatrix.cxx"
+
 
 namespace Verdandi
 {
@@ -550,7 +553,8 @@ namespace Verdandi
 
             /*** Sampling ***/
 
-            model_state_error_variance tmp_L, Ch;
+            model_state_error_variance tmp_L;
+            model_state_error_variance_reduced Ch;
             Ch.Copy(U_inv_);
             GetCholesky(Ch);
 

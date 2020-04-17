@@ -1170,7 +1170,7 @@ namespace Seldon
     int a, b;
     M.GetProcessorRowRange(a, b);
     for (int i = a; i < b; i++)
-      M.SetBuffer(i, j, X(i));
+      M.SetBuffer(i, j, X(i), INSERT_VALUES);
     M.Flush();
   }
 
